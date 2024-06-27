@@ -29,13 +29,13 @@ import { rootSignals } from "./client/signals/RootSignals";
 import { router } from "./App";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAMMhQk4BBYR-xiQYwwz3xTlWz6bqA62vw",
-  authDomain: "leaguelink-35ecc.firebaseapp.com",
-  projectId: "leaguelink-35ecc",
-  storageBucket: "leaguelink-35ecc.appspot.com",
-  messagingSenderId: "70075954536",
-  appId: "1:70075954536:web:0f22957bda7041695dd2dd",
-  measurementId: "G-GQSH44SZH7",
+  apiKey: "AIzaSyCd-juXIN8atCk9BFdMVjJRf4BelyBIngk",
+  authDomain: "integra-88dea.firebaseapp.com",
+  projectId: "integra-88dea",
+  storageBucket: "integra-88dea.appspot.com",
+  messagingSenderId: "583298071479",
+  appId: "1:583298071479:web:3675ce7bf80fad46c40632",
+  measurementId: "G-NK3E2DFGMF",
 };
 
 const root = ReactDOM.createRoot(

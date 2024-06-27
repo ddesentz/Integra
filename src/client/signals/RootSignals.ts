@@ -1,5 +1,8 @@
+import { signal } from "@preact/signals-react";
+
 const createRootSignals = () => {
-  return {};
+  const collectionPath = signal<string[]>([]);
+  return { collectionPath };
 };
 
 export const rootSignals = {

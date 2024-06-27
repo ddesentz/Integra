@@ -5,9 +5,11 @@ export const dataTablePanelStyles = makeStyles()((theme: Theme) => ({
   dataTablePanelContainer: {
     flex: 1,
     boxSizing: "border-box",
-    borderLeft: `1px solid ${theme.palette.info.main}`,
-    "&:first-of-type": {
-      borderLeft: "none",
+    borderRight: `1px solid ${theme.palette.info.main}`,
+    minWidth: "calc(100% / 4)",
+    maxWidth: "calc(100% / 2)",
+    "&:last-of-type:not(:only-of-type)": {
+      minWidth: "calc(100% / 2)",
     },
   },
   panelHeader: {
@@ -16,6 +18,10 @@ export const dataTablePanelStyles = makeStyles()((theme: Theme) => ({
     padding: theme.spacing(2),
     backgroundColor: theme.palette.background.paper,
     flexWrap: "nowrap",
+  },
+  detailWrapper: {
+    display: "flex",
+    flexDirection: "row",
   },
   typeIcon: {
     width: theme.spacing(5),

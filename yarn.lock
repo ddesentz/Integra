@@ -6782,7 +6782,7 @@ firebase-functions@^4.7.0:
     express "^4.17.1"
     protobufjs "^7.2.2"
 
-firebase-tools@^13.3.0:
+firebase-tools@^13.12.0:
   version "13.12.0"
   resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-13.12.0.tgz#7b1ae1925367d932617839bde71af916c20b35fb"
   integrity sha512-hr3rqrWeeiNshVzmVSeQkCOSGUSKMxZs+ztairg4r6wteGUOVz56DrYsDMTUxjqH5zPxz5pxK9cvJi4M4ER13g==

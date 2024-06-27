@@ -3,15 +3,21 @@ import { dataTableStyles } from "./DataTableStyles";
 import { DataTableHeader } from "./Header/DataTableHeader";
 import { Grid } from "@mui/material";
 import { DataTablePanel } from "./Panel/DataTablePanel";
+import { useAppSignals } from "../../common/AppContext";
 
 interface IDataTable {}
 
 const DataTableComponent: React.FunctionComponent<IDataTable> = () => {
   const { classes } = dataTableStyles();
-  const [dataPath, setDataPath] = React.useState<string[]>([
-    "Live_POV",
-    "Object 1",
-  ]);
+  const { rootSignals } = useAppSignals();
+  const collectionPath = rootSignals.collectionPath.value;
+
+  const getTransformStyle = () => {
+    if (collectionPath.length > 2) {
+      return `translateX(-${(collectionPath.length - 2) * (100 / 4)}%)`;
+    }
+    return "translateX(0)";
+  };
 
   return (
     <Grid
@@ -21,31 +27,24 @@ const DataTableComponent: React.FunctionComponent<IDataTable> = () => {
       justifyContent="flex-start"
       className={classes.dataTableContainer}
     >
-      <DataTableHeader path={dataPath} />
-      <Grid container direction="row" className={classes.dataPanelsContainer}>
-        <DataTablePanel
-          label="(root)"
-          type="root"
-          childLabel={dataPath.length > 0 ? dataPath[0] : undefined}
-        />
-        {dataPath.length > 0 && (
-          <>
-            {dataPath.map((item, index) => {
-              return (
-                <DataTablePanel
-                  key={index}
-                  label={item}
-                  type={index % 2 ? "record" : "collection"}
-                  childLabel={
-                    index !== dataPath.length - 1
-                      ? dataPath[index + 1]
-                      : undefined
-                  }
-                />
-              );
-            })}
-          </>
-        )}
+      <DataTableHeader />
+      <Grid
+        container
+        direction="row"
+        className={classes.dataPanelsContainer}
+        style={{ transform: getTransformStyle() }}
+      >
+        <DataTablePanel index={0} path="(root)" type="root" />
+        {collectionPath.map((item, index) => {
+          return (
+            <DataTablePanel
+              index={index + 1}
+              key={index}
+              path={item}
+              type={index % 2 ? "record" : "collection"}
+            />
+          );
+        })}
       </Grid>
     </Grid>
   );

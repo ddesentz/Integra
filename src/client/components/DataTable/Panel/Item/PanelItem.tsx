@@ -3,17 +3,27 @@ import { panelItemStyles } from "./PanelItemStyles";
 import { Grid, Typography } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { useAppSignals } from "../../../../common/AppContext";
 
 interface IPanelItem {
+  index: number;
   label: string;
-  isActive: boolean;
 }
 
 const PanelItemComponent: React.FunctionComponent<IPanelItem> = ({
+  index,
   label,
-  isActive = false,
 }) => {
   const { classes } = panelItemStyles();
+  const { rootSignals } = useAppSignals();
+  const isActive = rootSignals.collectionPath.value[index] === label;
+
+  const handlePathSelection = () => {
+    rootSignals.collectionPath.value = [
+      ...rootSignals.collectionPath.value.slice(0, index),
+      label,
+    ];
+  };
 
   return (
     <Grid
@@ -24,6 +34,7 @@ const PanelItemComponent: React.FunctionComponent<IPanelItem> = ({
       className={
         isActive ? classes.activePanelItemContainer : classes.panelItemContainer
       }
+      onClick={handlePathSelection}
     >
       <Typography className={classes.panelItemLabel}>{label}</Typography>
       {isActive && (

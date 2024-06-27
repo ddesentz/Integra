@@ -13,6 +13,7 @@ export const dataTableHeaderStyles = makeStyles()((theme: Theme) => ({
   rootIcon: {
     width: theme.spacing(5),
     height: theme.spacing(5),
+    cursor: "pointer",
   },
   breadCrumbContainer: {
     display: "flex",
@@ -28,10 +29,12 @@ export const dataTableHeaderStyles = makeStyles()((theme: Theme) => ({
   breacrumbText: {
     fontSize: theme.spacing(4),
     color: theme.palette.info.light,
+    cursor: "pointer",
   },
   lastBreadcrumbText: {
     fontSize: theme.spacing(4),
     color: theme.palette.info.light,
     fontWeight: "bold",
+    cursor: "pointer",
   },
 }));
