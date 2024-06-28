@@ -23,4 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 .firebase/*
-functions/*.log
+functions/firebase-debug.log
