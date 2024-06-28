@@ -9,6 +9,7 @@ import "@fontsource/montserrat/700.css";
 import { ThemeProvider } from "@mui/material";
 import { initializeApp } from "firebase/app";
 import {
+  connectFirestoreEmulator,
   getFirestore,
   initializeFirestore,
   persistentLocalCache,
@@ -60,6 +61,9 @@ initializeFirestore(app, {
   ),
 });
 export const db = getFirestore(app);
+if (process.env.NODE_ENV === "development") {
+  connectFirestoreEmulator(db, "127.0.0.1", 5003);
+}
 export const storage = getStorage(app);
 
 root.render(

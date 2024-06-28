@@ -2,9 +2,13 @@ export const functions = require("firebase-functions");
 export const algoliasearch = require("algoliasearch");
 export const { onCall } = require("firebase-functions/v2/https");
 
+const config = functions.config();
+console.log(config);
+
+console.log(config.algolia.app.id, config.algolia.write.key);
 export const client = algoliasearch(
-  process.env.ALGOLIA_APP_ID,
-  process.env.ALGOLIA_WRITE_KEY
+  config.algolia.app.id,
+  config.algolia.write.key
 );
 
 module.exports = {

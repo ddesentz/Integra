@@ -64,7 +64,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "env-cmd -f .env.local npm run build && firebase deploy"
+    "deploy": "env-cmd -f .env.local npm run build && firebase deploy",
+    "saveDB": "firebase emulators:export ./emulator_data --only firestore"
   },
   "eslintConfig": {
     "extends": [

@@ -15,7 +15,10 @@ import { useAppSignals } from "../../../common/AppContext";
 import { collection, doc, onSnapshot, query } from "firebase/firestore";
 import JsonView from "react18-json-view";
 import "react18-json-view/src/style.css";
-import { uploadObjects } from "../../../common/Helper/HelperFunctions";
+import {
+  uploadObjects,
+  uploadObjects2,
+} from "../../../common/Helper/HelperFunctions";
 
 interface IDataTablePanel {
   index: number;
@@ -100,8 +103,6 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
   };
 
   const handleUploadData = () => {
-    if (type !== "collection") return;
-
     uploadObjects();
   };
 

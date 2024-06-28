@@ -7,3 +7,9 @@ export const uploadObjects = () => {
     setDoc(doc(db, `Live_POV_Objects`, object.identity.callsign), object);
   });
 };
+
+export const uploadObjects2 = () => {
+  Live_POV_Objects_Data.forEach((object) => {
+    setDoc(doc(db, `test`, object.identity.callsign), object);
+  });
+};
