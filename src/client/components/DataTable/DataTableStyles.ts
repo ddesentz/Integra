@@ -9,10 +9,12 @@ export const dataTableStyles = makeStyles()((theme: Theme) => ({
     border: `1px solid ${theme.palette.info.main}`,
     borderRadius: theme.spacing(3),
     overflow: "hidden",
+    flexWrap: "nowrap",
   },
   dataPanelsContainer: {
     flex: 1,
     flexWrap: "nowrap",
+    maxHeight: `calc(100% - ${theme.spacing(10)})`,
     transition: "transform 0.3s ease-in-out",
     "& > div:first-of-type": {
       borderBottomLeftRadius: theme.spacing(3),

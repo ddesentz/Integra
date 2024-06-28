@@ -10,7 +10,13 @@ interface IDataTable {}
 const DataTableComponent: React.FunctionComponent<IDataTable> = () => {
   const { classes } = dataTableStyles();
   const { rootSignals } = useAppSignals();
-  const collectionPath = rootSignals.collectionPath.value;
+  const [collectionPath, setCollectionPath] = React.useState<string[]>(
+    rootSignals.collectionPath.value
+  );
+
+  React.useEffect(() => {
+    setCollectionPath(rootSignals.collectionPath.value);
+  }, [rootSignals.collectionPath.value]);
 
   const getTransformStyle = () => {
     if (collectionPath.length > 2) {

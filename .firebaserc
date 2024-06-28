@@ -1,0 +1,13 @@
+{
+  "projects": {
+    "default": "integra-88dea"
+  },
+  "targets": {},
+  "etags": {
+    "integra-88dea": {
+      "extensionInstances": {
+        "firestore-algolia-search": "d0ed9c0171543dc01d20465892dc95936f04b0bafec4038deedb09818540cb4e"
+      }
+    }
+  }
+}

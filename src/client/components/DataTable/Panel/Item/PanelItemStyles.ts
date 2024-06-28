@@ -22,6 +22,9 @@ export const panelItemStyles = makeStyles()((theme: Theme) => ({
     flex: 1,
     textAlign: "start",
     paddingLeft: theme.spacing(9),
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
   },
   activeIcon: {
     width: theme.spacing(3),

@@ -51,6 +51,7 @@
     "react-svg": "^16.1.34",
     "react-virtualized": "^9.22.5",
     "react-window": "^1.8.10",
+    "react18-json-view": "^0.2.8",
     "tss-react": "^4.9.3",
     "typescript": "^4.4.2",
     "use-detect-keyboard-open": "^0.4.0",
