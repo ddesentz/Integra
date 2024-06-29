@@ -22,15 +22,16 @@ import {
   uploadObjects,
 } from "../../../common/Helper/HelperFunctions";
 import { LIVE_POV_Object_Events } from "../../../common/Helper/HelperData";
+import { AutoSizer, List } from "react-virtualized";
 
 interface IDataTablePanel {
-  index: number;
+  dataPathIndex: number;
   path: string;
   type: string;
 }
 
 const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
-  index,
+  dataPathIndex,
   path,
   type,
 }) => {
@@ -47,10 +48,13 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
   const [loadingList, setLoadingList] = React.useState<boolean>(false);
   const [loadingCollection, setLoadingCollection] =
     React.useState<boolean>(false);
+  const listRef = React.createRef<List>();
 
   React.useEffect(() => {
     let unsub: any;
-    const indexPath = [...rootSignals.datasetPath.value.slice(0, index)];
+    const indexPath = [
+      ...rootSignals.datasetPath.value.slice(0, dataPathIndex),
+    ];
     if (type === "root") {
       setLoadingList(true);
       const callableReturnMessage = httpsCallable(functions, "getRootStore");
@@ -59,7 +63,7 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
         setLoadingList(false);
       });
     } else if (type === "collection") {
-      if (index <= indexPath.length) {
+      if (dataPathIndex <= indexPath.length) {
         setLoadingList(true);
         const allRecordsQuery = query(collection(db, indexPath.join("/")));
         unsub = onSnapshot(allRecordsQuery, (snapshot) => {
@@ -71,14 +75,14 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
               )
           );
           setLoadingList(false);
-          if (rootSignals.datasetPath.value.length === 1) {
+          if (rootSignals.datasetPath.value.length <= 2) {
             rootSignals.mapData.value = convertObjectsToFeatureCollection(
               snapshot.docs.map((doc) => {
                 return { id: doc.id, ...doc.data() };
               })
             );
           }
-          if (rootSignals.datasetPath.value.length === 3) {
+          if (rootSignals.datasetPath.value.length > 2) {
             rootSignals.mapData.value = convertObjectsToFeatureCollection(
               snapshot.docs.map((doc) => {
                 return { id: doc.data().identity.callsign, ...doc.data() };
@@ -88,10 +92,10 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
         });
       }
     } else {
-      if (index <= indexPath.length) {
+      if (dataPathIndex <= indexPath.length) {
         const parentPath = indexPath.slice(0, indexPath.length - 1).join("/");
         const docId = indexPath[indexPath.length - 1];
-        if (index === 2) {
+        if (dataPathIndex === 2) {
           setLoadingCollection(true);
           const callableReturnMessage = httpsCallable(
             functions,
@@ -118,6 +122,19 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
       if (unsub) unsub();
     };
   }, [type, rootSignals.datasetPath.value]);
+
+  React.useEffect(() => {
+    if (rootSignals.activeObject.value) {
+      if (dataPathIndex === 1) {
+        const activeIndex = items.findIndex(
+          (item) => item === rootSignals.activeObject.value.id
+        );
+        if (activeIndex !== -1) {
+          listRef.current?.scrollToPosition(activeIndex * 40);
+        }
+      }
+    }
+  }, [rootSignals.activeObject.value]);
 
   const handleUploadData = () => {
     uploadObjects(LIVE_POV_Object_Events, "Live_POV_Objects");
@@ -158,7 +175,11 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
                 <div className={classes.recordContentContainer}>
                   {recordCollections.map((collection, idx) => {
                     return (
-                      <PanelItem key={idx} index={index} label={collection} />
+                      <PanelItem
+                        key={idx}
+                        index={dataPathIndex}
+                        label={collection}
+                      />
                     );
                   })}
                 </div>
@@ -189,16 +210,31 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
         </div>
       ) : (
         <div className={classes.contentScrollContainer}>
-          {items.map((item, idx) => {
-            return <PanelItem key={idx} index={index} label={item} />;
-          })}
+          <AutoSizer>
+            {({ height, width }) => (
+              <List
+                ref={listRef}
+                width={width}
+                height={height}
+                rowCount={items.length}
+                rowHeight={40}
+                rowRenderer={({ key, index, style }) => {
+                  return (
+                    <div key={key} style={style}>
+                      <PanelItem index={dataPathIndex} label={items[index]} />
+                    </div>
+                  );
+                }}
+              />
+            )}
+          </AutoSizer>
         </div>
       );
       return;
     }
   };
 
-  if (index > rootSignals.datasetPath.value.length) return null;
+  if (dataPathIndex > rootSignals.datasetPath.value.length) return null;
 
   return (
     <Grid

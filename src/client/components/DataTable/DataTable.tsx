@@ -47,11 +47,11 @@ const DataTableComponent: React.FunctionComponent<IDataTable> = () => {
         className={classes.dataPanelsContainer}
         style={{ transform: getTransformStyle() }}
       >
-        <DataTablePanel index={0} path="(root)" type="root" />
+        <DataTablePanel dataPathIndex={0} path="(root)" type="root" />
         {collectionPath.map((item, index) => {
           return (
             <DataTablePanel
-              index={index + 1}
+              dataPathIndex={index + 1}
               key={index}
               path={item}
               type={index % 2 ? "record" : "collection"}

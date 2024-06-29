@@ -107,6 +107,12 @@ export const dataTablePanelStyles = makeStyles()((theme: Theme) => ({
   contentScrollContainer: {
     width: "100%",
     maxHeight: `calc(100% - ${theme.spacing(10)})`,
-    overflowY: "auto",
+    overflow: "hidden",
+    height: "100%",
+    "& > div": {
+      "& > div": {
+        scrollBehavior: "smooth",
+      },
+    },
   },
 }));
