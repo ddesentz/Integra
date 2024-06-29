@@ -27,12 +27,20 @@ export const dataTablePanelStyles = makeStyles()((theme: Theme) => ({
   detailWrapper: {
     display: "flex",
     flexDirection: "row",
+    width: `calc(100% - ${theme.spacing(7)})`,
   },
   typeIcon: {
     width: theme.spacing(5),
     height: theme.spacing(5),
     color: theme.palette.info.light,
     marginRight: theme.spacing(2),
+    cursor: "pointer",
+  },
+  actionIcon: {
+    width: theme.spacing(5),
+    height: theme.spacing(5),
+    color: theme.palette.info.light,
+    marginLeft: theme.spacing(2),
     cursor: "pointer",
     "&:hover": {
       color: theme.palette.primary.light,
@@ -41,6 +49,11 @@ export const dataTablePanelStyles = makeStyles()((theme: Theme) => ({
   labelText: {
     fontSize: theme.spacing(4),
     color: theme.palette.info.light,
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
+    textAlign: "start",
+    width: `calc(100% - ${theme.spacing(7)})`,
   },
   loadingrecordContentContainer: {
     display: "flex",
@@ -63,6 +76,10 @@ export const dataTablePanelStyles = makeStyles()((theme: Theme) => ({
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
     width: `calc(100% - ${theme.spacing(11)})`,
+    "& > .json-view": {
+      display: "flex",
+      flexWrap: "nowrap",
+    },
   },
   loadingContainer: {
     width: "100%",

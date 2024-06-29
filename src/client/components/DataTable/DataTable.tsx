@@ -11,12 +11,12 @@ const DataTableComponent: React.FunctionComponent<IDataTable> = () => {
   const { classes } = dataTableStyles();
   const { rootSignals } = useAppSignals();
   const [collectionPath, setCollectionPath] = React.useState<string[]>(
-    rootSignals.collectionPath.value
+    rootSignals.datasetPath.value
   );
 
   React.useEffect(() => {
-    setCollectionPath(rootSignals.collectionPath.value);
-  }, [rootSignals.collectionPath.value]);
+    setCollectionPath(rootSignals.datasetPath.value);
+  }, [rootSignals.datasetPath.value]);
 
   const getTransformStyle = () => {
     if (collectionPath.length > 2) {

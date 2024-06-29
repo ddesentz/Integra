@@ -16,11 +16,11 @@ const PanelItemComponent: React.FunctionComponent<IPanelItem> = ({
 }) => {
   const { classes } = panelItemStyles();
   const { rootSignals } = useAppSignals();
-  const isActive = rootSignals.collectionPath.value[index] === label;
+  const isActive = rootSignals.datasetPath.value[index] === label;
 
   const handlePathSelection = () => {
-    rootSignals.collectionPath.value = [
-      ...rootSignals.collectionPath.value.slice(0, index),
+    rootSignals.datasetPath.value = [
+      ...rootSignals.datasetPath.value.slice(0, index),
       label,
     ];
   };

@@ -1,8 +1,8 @@
 import { signal } from "@preact/signals-react";
 
 const createRootSignals = () => {
-  const collectionPath = signal<string[]>([]);
-  return { collectionPath };
+  const datasetPath = signal<string[]>([]);
+  return { datasetPath };
 };
 
 export const rootSignals = {

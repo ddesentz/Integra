@@ -16,9 +16,11 @@ import { collection, doc, onSnapshot, query } from "firebase/firestore";
 import JsonView from "react18-json-view";
 import "react18-json-view/src/style.css";
 import {
+  sortObject,
+  updateObjectHistory,
   uploadObjects,
-  uploadObjects2,
 } from "../../../common/Helper/HelperFunctions";
+import { LIVE_POV_Object_Events } from "../../../common/Helper/HelperData";
 
 interface IDataTablePanel {
   index: number;
@@ -46,64 +48,69 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
     React.useState<boolean>(false);
 
   React.useEffect(() => {
+    let unsub: any;
+    const indexPath = [...rootSignals.datasetPath.value.slice(0, index)];
     if (type === "root") {
-      getRootCollections();
+      setLoadingList(true);
+      const callableReturnMessage = httpsCallable(functions, "getRootStore");
+      callableReturnMessage().then((result: any) => {
+        setItems(result.data);
+        setLoadingList(false);
+      });
     } else if (type === "collection") {
-      getCollectionRecords(rootSignals.collectionPath.value);
+      if (index <= indexPath.length) {
+        setLoadingList(true);
+        const allRecordsQuery = query(collection(db, indexPath.join("/")));
+        unsub = onSnapshot(allRecordsQuery, (snapshot) => {
+          setItems(
+            snapshot.docs
+              .map((doc) => doc.id)
+              .sort((a: string, b: string) =>
+                a.toLowerCase() > b.toLowerCase() ? -1 : 1
+              )
+          );
+          setLoadingList(false);
+        });
+      }
     } else {
-      getRecordData(rootSignals.collectionPath.value);
-    }
-  }, [type, rootSignals.collectionPath.value]);
-
-  const getRootCollections = () => {
-    setLoadingList(true);
-    const callableReturnMessage = httpsCallable(functions, "getRootStore");
-    callableReturnMessage().then((result: any) => {
-      setItems(result.data);
-      setLoadingList(false);
-    });
-  };
-
-  const getCollectionRecords = (currentPath: string[]) => {
-    const indexPath = currentPath.slice(0, index);
-
-    if (index <= indexPath.length) {
-      setLoadingList(true);
-      const allRecordsQuery = query(collection(db, indexPath.join("/")));
-      onSnapshot(allRecordsQuery, (snapshot) => {
-        setItems(snapshot.docs.map((doc) => doc.id));
-        setLoadingList(false);
-      });
-    }
-  };
-
-  const getRecordData = (currentPath: string[]) => {
-    const indexPath = currentPath.slice(0, index);
-    const parentPath = indexPath.slice(0, indexPath.length - 1).join("/");
-    const docId = indexPath[indexPath.length - 1];
-
-    if (index <= indexPath.length) {
-      setLoadingList(true);
-      setLoadingCollection(true);
-      const callableReturnMessage = httpsCallable(
-        functions,
-        "getDocumentCollections"
-      );
-      callableReturnMessage({ parentPath: parentPath, docId: docId }).then(
-        (result: any) => {
-          setRecordCollections(result.data);
-          setLoadingCollection(false);
+      if (index <= indexPath.length) {
+        const parentPath = indexPath.slice(0, indexPath.length - 1).join("/");
+        const docId = indexPath[indexPath.length - 1];
+        if (index === 2) {
+          setLoadingCollection(true);
+          const callableReturnMessage = httpsCallable(
+            functions,
+            "getDocumentCollections"
+          );
+          callableReturnMessage({ parentPath: parentPath, docId: docId }).then(
+            (result: any) => {
+              setRecordCollections(result.data);
+              setLoadingCollection(false);
+            }
+          );
         }
-      );
-      onSnapshot(doc(db, parentPath, docId), (doc) => {
-        setRecordJSON(doc.data());
-        setLoadingList(false);
-      });
+        setLoadingList(true);
+        unsub = onSnapshot(doc(db, parentPath, docId), (doc) => {
+          setRecordJSON(doc.data());
+          setLoadingList(false);
+        });
+      }
     }
-  };
+    return () => {
+      if (unsub) unsub();
+    };
+  }, [type, rootSignals.datasetPath.value]);
 
   const handleUploadData = () => {
-    uploadObjects();
+    uploadObjects(LIVE_POV_Object_Events, "Live_POV_Objects");
+  };
+
+  const handleDocChange = (newDoc: any) => {
+    updateObjectHistory(
+      newDoc.src,
+      rootSignals.datasetPath.value[0],
+      rootSignals.datasetPath.value[1]
+    );
   };
 
   const renderTypeIcon = () => {
@@ -146,10 +153,14 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
               <CircularProgress size={100} />
             </div>
           ) : (
-            <JsonView
-              src={recordJSON}
-              className={classes.jsonViewerContainer}
-            />
+            <div className={classes.contentScrollContainer}>
+              <JsonView
+                src={sortObject(recordJSON, true)}
+                editable={true}
+                onChange={handleDocChange}
+                className={classes.jsonViewerContainer}
+              />
+            </div>
           )}
         </>
       );
@@ -169,7 +180,7 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
     }
   };
 
-  if (index > rootSignals.collectionPath.value.length) return null;
+  if (index > rootSignals.datasetPath.value.length) return null;
 
   return (
     <Grid
@@ -188,11 +199,14 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
       >
         <Grid item className={classes.detailWrapper}>
           {renderTypeIcon()}
-          <Typography className={classes.labelText}>{displayPath}</Typography>
+          <Typography className={classes.labelText}>
+            {displayPath}
+            {type === "collection" ? ` (${items.length})` : ""}
+          </Typography>
         </Grid>
         <FontAwesomeIcon
           icon={faPlus}
-          className={classes.typeIcon}
+          className={classes.actionIcon}
           onClick={handleUploadData}
         />
       </Grid>

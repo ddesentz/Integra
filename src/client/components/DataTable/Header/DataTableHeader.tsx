@@ -13,15 +13,15 @@ const DataTableHeaderComponent: React.FunctionComponent<
 > = ({}) => {
   const { classes } = dataTableHeaderStyles();
   const { rootSignals } = useAppSignals();
-  const path = rootSignals.collectionPath.value;
+  const path = rootSignals.datasetPath.value;
 
   const handlePathSelection = (index: number, label: string) => {
     if (index === 0) {
-      rootSignals.collectionPath.value = [];
+      rootSignals.datasetPath.value = [];
       return;
     }
-    rootSignals.collectionPath.value = [
-      ...rootSignals.collectionPath.value.slice(0, index - 1),
+    rootSignals.datasetPath.value = [
+      ...rootSignals.datasetPath.value.slice(0, index - 1),
       label,
     ];
   };

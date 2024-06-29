@@ -3,7 +3,7 @@ const admin = require("firebase-admin");
 admin.initializeApp();
 const db = admin.firestore();
 
-const objectIndex = client.initIndex("Live_POV_Objects");
+const objectIndex = client.initIndex("Objects");
 
 exports.getRootStore = onCall(() => {
   return new Promise((resolve, reject) => {
@@ -39,7 +39,7 @@ exports.getDocumentCollections = onCall((data: any) => {
 });
 
 exports.addObjectIndex = functions.firestore
-  .document("Live_POV_Objects/{objectId}")
+  .document("{datasetId}/{objectId}")
   .onCreate((snapshot: any) => {
     const data = snapshot.data();
     const objectID = snapshot.id;
@@ -47,7 +47,7 @@ exports.addObjectIndex = functions.firestore
   });
 
 exports.updateObjectIndex = functions.firestore
-  .document("Live_POV_Objects/{objectId}")
+  .document("{datasetId}/{objectId}")
   .onUpdate((change: any) => {
     const newData = change.after.data();
     const objectID = change.after.id;
@@ -55,5 +55,5 @@ exports.updateObjectIndex = functions.firestore
   });
 
 exports.deleteObjectIndex = functions.firestore
-  .document("Live_POV_Objects/{objectId}")
+  .document("{datasetId}/{objectId}")
   .onDelete((snapshot: any) => objectIndex.deleteObject(snapshot.id));

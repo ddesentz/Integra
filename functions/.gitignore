@@ -12,3 +12,5 @@ firebase-debug.log
 .runtimeconfig.json
 firestore-debug.log
 ui-debug.log
+emulator-data/
+null
