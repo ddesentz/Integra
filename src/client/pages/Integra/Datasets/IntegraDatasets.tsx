@@ -10,6 +10,8 @@ import {
   faTableList,
 } from "@fortawesome/free-solid-svg-icons";
 import { DataTable } from "../../../components/DataTable/DataTable";
+import { IntegraMap } from "../../../components/Map/IntegraMap";
+import { useAppSignals } from "../../../common/AppContext";
 
 interface IIntegraDatasets {}
 
@@ -17,14 +19,15 @@ const IntegraDatasetsComponent: React.FunctionComponent<
   IIntegraDatasets
 > = () => {
   const { classes } = integraDatasetsStyles();
+  const { rootSignals } = useAppSignals();
   const [searchValue, setSearchValue] = React.useState<string>("");
-  const [viewType, setViewType] = React.useState<string>("list");
 
   const handleAlignment = (
     event: React.MouseEvent<HTMLElement>,
     newViewType: string
   ) => {
-    setViewType(newViewType);
+    if (newViewType === null) return;
+    rootSignals.viewMap.value = newViewType === "map";
   };
 
   return (
@@ -58,7 +61,7 @@ const IntegraDatasetsComponent: React.FunctionComponent<
             />
           </div>
           <ToggleButtonGroup
-            value={viewType}
+            value={rootSignals.viewMap.value ? "map" : "list"}
             exclusive
             onChange={handleAlignment}
             aria-label="text alignment"
@@ -85,7 +88,10 @@ const IntegraDatasetsComponent: React.FunctionComponent<
             </ToggleButton>
           </ToggleButtonGroup>
         </Grid>
-        <DataTable />
+        <Grid container direction="row" className={classes.viewContainer}>
+          <DataTable />
+          {rootSignals.viewMap.value && <IntegraMap />}
+        </Grid>
       </Grid>
     </>
   );

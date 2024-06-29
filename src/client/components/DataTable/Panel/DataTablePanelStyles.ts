@@ -15,6 +15,19 @@ export const dataTablePanelStyles = makeStyles()((theme: Theme) => ({
       minWidth: "calc(100% / 2)",
     },
   },
+  mapDataTablePanelContainer: {
+    boxSizing: "border-box",
+    borderRight: `1px solid ${theme.palette.info.main}`,
+    minWidth: "calc(100% / 3)",
+    maxWidth: "calc(2 * (100% / 3))",
+    flexWrap: "nowrap",
+    overflowX: "hidden",
+    overflowY: "auto",
+    height: "100%",
+    "&:last-of-type:not(:only-of-type)": {
+      minWidth: "calc(2 * (100% / 3))",
+    },
+  },
   panelHeader: {
     height: theme.spacing(10),
     width: "100%",

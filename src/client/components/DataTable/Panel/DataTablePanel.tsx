@@ -16,6 +16,7 @@ import { collection, doc, onSnapshot, query } from "firebase/firestore";
 import JsonView from "react18-json-view";
 import "react18-json-view/src/style.css";
 import {
+  convertObjectsToFeatureCollection,
   sortObject,
   updateObjectHistory,
   uploadObjects,
@@ -70,6 +71,20 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
               )
           );
           setLoadingList(false);
+          if (rootSignals.datasetPath.value.length === 1) {
+            rootSignals.mapData.value = convertObjectsToFeatureCollection(
+              snapshot.docs.map((doc) => {
+                return { id: doc.id, ...doc.data() };
+              })
+            );
+          }
+          if (rootSignals.datasetPath.value.length === 3) {
+            rootSignals.mapData.value = convertObjectsToFeatureCollection(
+              snapshot.docs.map((doc) => {
+                return { id: doc.data().identity.callsign, ...doc.data() };
+              })
+            );
+          }
         });
       }
     } else {
@@ -92,6 +107,9 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
         setLoadingList(true);
         unsub = onSnapshot(doc(db, parentPath, docId), (doc) => {
           setRecordJSON(doc.data());
+          if (rootSignals.datasetPath.value.length === 2) {
+            rootSignals.activeObject.value = { id: doc.id, ...doc.data() };
+          }
           setLoadingList(false);
         });
       }
@@ -188,7 +206,11 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
       direction="column"
       alignItems="flex-start"
       justifyContent="flex-start"
-      className={classes.dataTablePanelContainer}
+      className={
+        rootSignals.viewMap.value
+          ? classes.mapDataTablePanelContainer
+          : classes.dataTablePanelContainer
+      }
     >
       <Grid
         container

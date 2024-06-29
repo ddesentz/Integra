@@ -1,5 +1,6 @@
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../../..";
+import { features } from "process";
 
 export const sortObject = (unordered, sortArrays = false) => {
   if (!unordered || typeof unordered !== "object") {
@@ -21,6 +22,25 @@ export const sortObject = (unordered, sortArrays = false) => {
       ordered[key] = sortObject(unordered[key], sortArrays);
     });
   return ordered;
+};
+
+export const convertObjectsToFeatureCollection = (objects: any[]) => {
+  return {
+    type: "FeatureCollection",
+    features: objects.map((object) => {
+      return {
+        type: "Feature",
+        geometry: {
+          type: "Point",
+          coordinates: [
+            (object.estimatedKinematics.position.longitude * 180) / Math.PI,
+            (object.estimatedKinematics.position.latitude * 180) / Math.PI,
+          ],
+        },
+        properties: object,
+      };
+    }),
+  };
 };
 
 export const uploadObjects = async (data: any[], datasetName: string) => {

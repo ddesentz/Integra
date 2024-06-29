@@ -33,4 +33,13 @@ export const integraDatasetsStyles = makeStyles()((theme: Theme) => ({
     width: theme.spacing(5),
     height: theme.spacing(5),
   },
+  viewContainer: {
+    flex: 1,
+    width: "100%",
+    boxSizing: "border-box",
+    borderRadius: theme.spacing(3),
+    overflow: "hidden",
+    flexWrap: "nowrap",
+    gap: theme.spacing(2),
+  },
 }));

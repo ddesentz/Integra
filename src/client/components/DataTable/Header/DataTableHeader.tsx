@@ -46,7 +46,7 @@ const DataTableHeaderComponent: React.FunctionComponent<
         onClick={() => handlePathSelection(0, "")}
       />
       {path.length > 0 && (
-        <>
+        <div className={classes.pathWrapper}>
           {path.map((item, index) => {
             return (
               <div key={index} className={classes.breadCrumbContainer}>
@@ -67,7 +67,7 @@ const DataTableHeaderComponent: React.FunctionComponent<
               </div>
             );
           })}
-        </>
+        </div>
       )}
     </Grid>
   );
