@@ -1,14 +1,23 @@
 import * as React from "react";
 import { integraMapStyles } from "./IntegraMapStyles";
-import Map, { Layer, MapRef, Source, ViewStateChangeEvent } from "react-map-gl";
+import Map, {
+  GeoJSONSource,
+  Layer,
+  MapRef,
+  Marker,
+  Source,
+} from "react-map-gl";
 import { useAppSignals } from "../../common/AppContext";
 import {
-  activeLayer,
+  activeHistory,
+  activeObject,
   clusterCountLayer,
   clusterLayer,
   unclusteredPointLayer,
   unclusteredPointTextLayer,
 } from "./MapLayers";
+import { TimeController } from "./TimeController/TimeController";
+import * as turf from "@turf/turf";
 
 interface IIntegraMap {}
 
@@ -16,26 +25,65 @@ const IntegraMapComponent: React.FunctionComponent<IIntegraMap> = () => {
   const { classes } = integraMapStyles();
   const { rootSignals } = useAppSignals();
   const mapRef = React.useRef<MapRef>();
-  const OBJECT_BOUNDING_OFFSET = 0.005;
-  const CLUSTER_BOUNDING_OFFSET = 0.1;
-  const DATASET_BOUNDING_OFFSET = 5;
+  const FIT_PADDING = 100;
+  const FIT_DELAY = 1000;
 
   React.useEffect(() => {
-    handleFitToObject();
-  }, [rootSignals.activeObject.value]);
+    if (rootSignals.mapData.value) {
+      handleFitToObject();
+    }
+  }, [rootSignals.activeObject.value, rootSignals.mapData.value]);
 
   React.useEffect(() => {
-    handleFitToDataset();
-  }, [rootSignals.datasetPath.value]);
+    if (rootSignals.mapData.value) {
+      handleFitToDataset();
+    }
+  }, [rootSignals.datasetPath.value, rootSignals.mapData.value]);
 
-  const handleFitBounds = (lat: number, lon: number, offset: number) => {
-    if (mapRef.current) {
+  const handleFocusObject = (
+    lon: number,
+    lat: number,
+    maxZoom: number = 12
+  ) => {
+    if (rootSignals.datasetPath.value.length < 3) {
       mapRef.current.fitBounds(
         [
-          [lon - offset, lat - offset],
-          [lon + offset, lat + offset],
+          [lon, lat],
+          [lon, lat],
         ],
-        { padding: 40, duration: 1500 }
+        {
+          padding: FIT_PADDING,
+          duration: FIT_DELAY,
+          maxZoom: maxZoom,
+        }
+      );
+    } else {
+      mapRef.current.panTo([lon, lat]);
+    }
+  };
+
+  const handleFitBounds = (featureMap: any[]) => {
+    if (mapRef.current) {
+      const bbox = turf.bbox(
+        turf.lineString(
+          featureMap.map((feature) => {
+            return [
+              feature.geometry.coordinates[0],
+              feature.geometry.coordinates[1],
+            ];
+          })
+        )
+      );
+
+      mapRef.current.fitBounds(
+        [
+          [bbox[0], bbox[1]],
+          [bbox[2], bbox[3]],
+        ],
+        {
+          padding: FIT_PADDING,
+          duration: FIT_DELAY,
+        }
       );
     }
   };
@@ -51,16 +99,24 @@ const IntegraMapComponent: React.FunctionComponent<IIntegraMap> = () => {
           180) /
         Math.PI;
 
-      handleFitBounds(lat, lon, OBJECT_BOUNDING_OFFSET);
+      handleFocusObject(lon, lat);
     }
   };
 
   const handleFitToDataset = () => {
-    if (rootSignals.datasetPath.value.length === 1 && mapRef.current) {
+    if (
+      rootSignals.mapData.value &&
+      rootSignals.datasetPath.value.length % 2 === 1 &&
+      mapRef.current
+    ) {
       rootSignals.activeObject.value = null;
-      const lon = -104.991531;
-      const lat = 39.742043;
-      handleFitBounds(lat, lon, DATASET_BOUNDING_OFFSET);
+      if (rootSignals.mapData.value.features.length > 1) {
+        handleFitBounds(rootSignals.mapData.value.features);
+      } else {
+        const position =
+          rootSignals.mapData.value.features[0].geometry.coordinates;
+        handleFocusObject(position[0], position[1]);
+      }
     }
   };
 
@@ -69,14 +125,32 @@ const IntegraMapComponent: React.FunctionComponent<IIntegraMap> = () => {
       const feature = event.features[0];
       if (feature.layer.id === "unclustered-point") {
         const position = feature.geometry.coordinates;
-        rootSignals.datasetPath.value = rootSignals.datasetPath.value = [
-          ...rootSignals.datasetPath.value.slice(0, 1),
-          feature.properties.id,
-        ];
-        handleFitBounds(position[1], position[0], OBJECT_BOUNDING_OFFSET);
+        if (rootSignals.datasetPath.value.length < 3) {
+          rootSignals.datasetPath.value = rootSignals.datasetPath.value = [
+            ...rootSignals.datasetPath.value.slice(0, 1),
+            feature.properties.id,
+          ];
+        } else {
+          rootSignals.datasetPath.value = rootSignals.datasetPath.value = [
+            ...rootSignals.datasetPath.value.slice(0, 3),
+            feature.properties.timestamp,
+          ];
+        }
+        handleFocusObject(position[0], position[1]);
       } else if (feature.layer.id === "clusters") {
-        const position = feature.geometry.coordinates;
-        handleFitBounds(position[1], position[0], CLUSTER_BOUNDING_OFFSET);
+        const clusterSource = mapRef.current?.getSource(
+          "datasetsMap"
+        ) as unknown as GeoJSONSource;
+        clusterSource.getClusterLeaves(
+          feature.properties.cluster_id,
+          feature.properties.point_count,
+          0,
+          (err: any, features: any) => {
+            if (!err) {
+              handleFitBounds(features);
+            }
+          }
+        );
       }
     }
   };
@@ -128,14 +202,31 @@ const IntegraMapComponent: React.FunctionComponent<IIntegraMap> = () => {
                 : ""
             )}
           />
-          <Layer
-            {...activeLayer(
-              rootSignals.activeObject.value
-                ? rootSignals.activeObject.value.id
-                : ""
-            )}
-          />
         </Source>
+        <Source
+          id="activePoints"
+          type="geojson"
+          data={rootSignals.mapData.value}
+        >
+          {rootSignals.datasetPath.value.length < 4 ? (
+            <Layer
+              {...activeObject(
+                rootSignals.activeObject.value
+                  ? rootSignals.activeObject.value.id
+                  : ""
+              )}
+            />
+          ) : (
+            <Layer
+              {...activeHistory(
+                rootSignals.activeObject.value
+                  ? rootSignals.activeObject.value.id
+                  : ""
+              )}
+            />
+          )}
+        </Source>
+        {rootSignals.datasetPath.value.length > 2 && <TimeController />}
       </Map>
     </div>
   );

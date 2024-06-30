@@ -12,7 +12,7 @@ export const dataTablePanelStyles = makeStyles()((theme: Theme) => ({
     overflowY: "auto",
     height: "100%",
     "&:last-of-type:not(:only-of-type)": {
-      minWidth: "calc(100% / 2)",
+      minWidth: "calc(1px + (100% / 2))",
     },
   },
   mapDataTablePanelContainer: {
@@ -25,7 +25,7 @@ export const dataTablePanelStyles = makeStyles()((theme: Theme) => ({
     overflowY: "auto",
     height: "100%",
     "&:last-of-type:not(:only-of-type)": {
-      minWidth: "calc(2 * (100% / 3))",
+      minWidth: "calc(1px + (2 * (100% / 3)))",
     },
   },
   panelHeader: {

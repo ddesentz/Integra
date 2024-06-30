@@ -6,6 +6,9 @@ export const clusterLayer: LayerProps = {
   type: "circle",
   source: "datasetsMap",
   filter: ["has", "point_count"],
+  layout: {
+    "circle-sort-key": 1,
+  },
   paint: {
     "circle-color": integraTheme.palette.primary.light,
     "circle-radius": ["step", ["get", "point_count"], 20, 100, 30, 750, 40],
@@ -63,14 +66,33 @@ export const unclusteredPointTextLayer: any = (activeId: string) => {
   };
 };
 
-export const activeLayer: any = (activeId: string) => {
+export const activeObject: any = (activeId: string) => {
   return {
     id: "active-point",
     type: "circle",
-    source: "datasetsMap",
+    source: "activePoints",
     filter: ["==", ["get", "id"], activeId],
     layout: {
-      "circle-sort-key": 0,
+      "circle-sort-key": 3,
+    },
+    paint: {
+      "circle-color": integraTheme.palette.secondary.main,
+      "circle-radius": 10,
+      "circle-stroke-width": 2,
+      "circle-stroke-color": integraTheme.palette.primary.contrastText,
+      "circle-allow-overlap": true,
+    },
+  };
+};
+
+export const activeHistory: any = (activeId: string) => {
+  return {
+    id: "active-point",
+    type: "circle",
+    source: "activePoints",
+    filter: ["==", ["get", "timestamp"], activeId],
+    layout: {
+      "circle-sort-key": 2,
     },
     paint: {
       "circle-color": integraTheme.palette.secondary.main,

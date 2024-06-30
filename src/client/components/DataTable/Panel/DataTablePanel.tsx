@@ -21,7 +21,10 @@ import {
   updateObjectHistory,
   uploadObjects,
 } from "../../../common/Helper/HelperFunctions";
-import { LIVE_POV_Object_Events } from "../../../common/Helper/HelperData";
+import {
+  LIVE_POV_Object_Events,
+  LIVE_POV_Object_Single_Track,
+} from "../../../common/Helper/HelperData";
 import { AutoSizer, List } from "react-virtualized";
 
 interface IDataTablePanel {
@@ -49,6 +52,7 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
   const [loadingCollection, setLoadingCollection] =
     React.useState<boolean>(false);
   const listRef = React.createRef<List>();
+  const scrollContainerRef = React.createRef<any>();
 
   React.useEffect(() => {
     let unsub: any;
@@ -79,20 +83,26 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
             rootSignals.mapData.value = convertObjectsToFeatureCollection(
               snapshot.docs.map((doc) => {
                 return { id: doc.id, ...doc.data() };
-              })
+              }),
+              false
             );
           }
-          if (rootSignals.datasetPath.value.length > 2) {
+          if (rootSignals.datasetPath.value.length > 2 && dataPathIndex > 2) {
             rootSignals.mapData.value = convertObjectsToFeatureCollection(
               snapshot.docs.map((doc) => {
-                return { id: doc.data().identity.callsign, ...doc.data() };
-              })
+                return {
+                  id: doc.data().identity.callsign,
+                  timestamp: doc.id,
+                  ...doc.data(),
+                };
+              }),
+              true
             );
           }
         });
       }
     } else {
-      if (dataPathIndex <= indexPath.length) {
+      if (dataPathIndex === rootSignals.datasetPath.value.length) {
         const parentPath = indexPath.slice(0, indexPath.length - 1).join("/");
         const docId = indexPath[indexPath.length - 1];
         if (dataPathIndex === 2) {
@@ -111,8 +121,11 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
         setLoadingList(true);
         unsub = onSnapshot(doc(db, parentPath, docId), (doc) => {
           setRecordJSON(doc.data());
-          if (rootSignals.datasetPath.value.length === 2) {
-            rootSignals.activeObject.value = { id: doc.id, ...doc.data() };
+          if (rootSignals.datasetPath.value.length % 2 === 0) {
+            rootSignals.activeObject.value = {
+              id: doc.id,
+              ...doc.data(),
+            };
           }
           setLoadingList(false);
         });
@@ -125,7 +138,7 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
 
   React.useEffect(() => {
     if (rootSignals.activeObject.value) {
-      if (dataPathIndex === 1) {
+      if (dataPathIndex === 1 || dataPathIndex === 3) {
         const activeIndex = items.findIndex(
           (item) => item === rootSignals.activeObject.value.id
         );
@@ -137,7 +150,12 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
   }, [rootSignals.activeObject.value]);
 
   const handleUploadData = () => {
-    uploadObjects(LIVE_POV_Object_Events, "Live_POV_Objects");
+    const sortedData = LIVE_POV_Object_Single_Track.sort((a: any, b: any) => {
+      return a.crucibleHeader.updatedDate < b.crucibleHeader.updatedDate
+        ? -1
+        : 1;
+    });
+    uploadObjects(sortedData, "Live_POV_Objects2");
   };
 
   const handleDocChange = (newDoc: any) => {
@@ -195,7 +213,7 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
             <div className={classes.contentScrollContainer}>
               <JsonView
                 src={sortObject(recordJSON, true)}
-                editable={true}
+                editable={rootSignals.datasetPath.value.length === 2}
                 onChange={handleDocChange}
                 className={classes.jsonViewerContainer}
               />
@@ -209,12 +227,15 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
           <CircularProgress size={100} />
         </div>
       ) : (
-        <div className={classes.contentScrollContainer}>
+        <div
+          ref={scrollContainerRef}
+          className={classes.contentScrollContainer}
+        >
           <AutoSizer>
             {({ height, width }) => (
               <List
                 ref={listRef}
-                width={width}
+                width={scrollContainerRef.current?.clientWidth || width}
                 height={height}
                 rowCount={items.length}
                 rowHeight={40}

@@ -2,6 +2,8 @@ import { doc, setDoc } from "firebase/firestore";
 import { db } from "../../..";
 import { features } from "process";
 
+const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+
 export const sortObject = (unordered, sortArrays = false) => {
   if (!unordered || typeof unordered !== "object") {
     return unordered;
@@ -24,9 +26,13 @@ export const sortObject = (unordered, sortArrays = false) => {
   return ordered;
 };
 
-export const convertObjectsToFeatureCollection = (objects: any[]) => {
+export const convertObjectsToFeatureCollection = (
+  objects: any[],
+  isHistory: boolean
+) => {
   return {
     type: "FeatureCollection",
+    isHistory: isHistory,
     features: objects.map((object) => {
       return {
         type: "Feature",
@@ -56,6 +62,7 @@ export const uploadObjects = async (data: any[], datasetName: string) => {
       ),
       object
     );
+    await delay(50);
   });
 };
 

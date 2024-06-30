@@ -6606,3 +6606,2503 @@ export const LIVE_POV_Object_Events = [
     source: { datasetName: "DenverRTD" },
   },
 ];
+
+export const LIVE_POV_Object_Single_Track = [
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-14T00:25:43.831Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-14T00:25:43.831Z",
+      updatedNodeId: "dev",
+      uuid: "54e711ef6cbb4667bb1196eec7f10c7b",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6934059251419843,
+        longitude: -1.8345117370468853,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-14T00:06:09.830Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-14T00:06:09.830Z",
+      updatedNodeId: "dev",
+      uuid: "f3a149cd171a40ba8af62dcc2c9760fa",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6945098633471632,
+        longitude: -1.8345161003700152,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T21:14:38.571Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T21:14:38.571Z",
+      updatedNodeId: "dev",
+      uuid: "60f15be6b471467894b70b3ad9371779",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6942457252181664,
+        longitude: -1.8345108643822594,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T22:34:45.681Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T22:34:45.681Z",
+      updatedNodeId: "dev",
+      uuid: "cfbcedcd382c436bbdf472cc729c6f3b",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6934312149628458,
+        longitude: -1.8345082463883813,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T22:56:00.751Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T22:56:00.751Z",
+      updatedNodeId: "dev",
+      uuid: "417cf60eab844c1699dea3c5667ca394",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6944700000270477,
+        longitude: -1.8345147041066137,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T22:38:07.748Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T22:38:07.748Z",
+      updatedNodeId: "dev",
+      uuid: "a961f07bb7294fbeab47d158f3659ff0",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6936066554592563,
+        longitude: -1.8345054538615782,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:43:53.172Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:43:53.172Z",
+      updatedNodeId: "dev",
+      uuid: "0ba87aaa945644968d4b446826a2f5a4",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6956274674803853,
+        longitude: -1.8340164126051695,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:05:26.750Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:05:26.750Z",
+      updatedNodeId: "dev",
+      uuid: "0340571e4b7f46409235f58d0c2fad7f",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6948853883890224,
+        longitude: -1.8343852006761159,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-14T00:21:47.702Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-14T00:21:47.702Z",
+      updatedNodeId: "dev",
+      uuid: "551609e2d4eb4623b6b42a16ea60e392",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6937285841608005,
+        longitude: -1.8345099917176333,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T22:25:50.034Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T22:25:50.034Z",
+      updatedNodeId: "dev",
+      uuid: "eb5ff27f30cb469685788f111716a01c",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6933268093669914,
+        longitude: -1.834885935638513,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T20:37:55.924Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T20:37:55.924Z",
+      updatedNodeId: "dev",
+      uuid: "5726fb0d94da4ccfbb23a69f60161d8d",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6956364559260331,
+        longitude: -1.8335347017316188,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T22:36:07.038Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T22:36:07.038Z",
+      updatedNodeId: "dev",
+      uuid: "a70e3294ba7a43fb9867ee0aac48079b",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.693560124981398,
+        longitude: -1.8345074609902179,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:26:41.971Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:26:41.971Z",
+      updatedNodeId: "dev",
+      uuid: "ca7c4d9fbe634e63901f31961a284a2c",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6956364559260331,
+        longitude: -1.8335347017316188,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T22:49:15.923Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T22:49:15.923Z",
+      updatedNodeId: "dev",
+      uuid: "49c58d7609ca4c84b0bb832d3f4abe0f",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6943388210804678,
+        longitude: -1.8345068501249797,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:43:12.779Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:43:12.779Z",
+      updatedNodeId: "dev",
+      uuid: "00e1b7d724d5469ab195afe5a2ec9627",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6956274674803853,
+        longitude: -1.8340164126051695,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T20:20:59.472Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T20:20:59.472Z",
+      updatedNodeId: "dev",
+      uuid: "8901389ca67d49989babb2a36629494d",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6956364559260331,
+        longitude: -1.8335347017316188,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:56:22.444Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:56:22.444Z",
+      updatedNodeId: "dev",
+      uuid: "a9bcc3b369494d8a91d60a9a9fcad7bd",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6950192027827727,
+        longitude: -1.8344836372459283,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T20:48:39.299Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T20:48:39.299Z",
+      updatedNodeId: "dev",
+      uuid: "0f6296c3bd10474a989c4591c0dcff68",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6954776658706866,
+        longitude: -1.8345187183638934,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:00:23.596Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:00:23.596Z",
+      updatedNodeId: "dev",
+      uuid: "981698f462d74ed0bd03c60b010a5e99",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6946742035495311,
+        longitude: -1.8344227252550338,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:16:35.299Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:16:35.299Z",
+      updatedNodeId: "dev",
+      uuid: "33337e6e24e74536a0d8342e52ed38e0",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6956236626626159,
+        longitude: -1.834042348197854,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T21:36:54.795Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T21:36:54.795Z",
+      updatedNodeId: "dev",
+      uuid: "ce691ec4da1c49af82ea5d7e0af83515",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6932386702397657,
+        longitude: -1.8348515526522486,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T21:04:31.050Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T21:04:31.050Z",
+      updatedNodeId: "dev",
+      uuid: "35f9d9769a0547cf98f3fc2ca04ccaf8",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6945054825707409,
+        longitude: -1.8345396623149173,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:27:02.021Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:27:02.021Z",
+      updatedNodeId: "dev",
+      uuid: "53e44e61004c4178ad4a4035ff3ebb58",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6956364559260331,
+        longitude: -1.8335347017316188,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:07:28.887Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:07:28.887Z",
+      updatedNodeId: "dev",
+      uuid: "164c1528625c46c4aecaee50dc7f80eb",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.695175636643629,
+        longitude: -1.8345108643822594,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T22:23:28.959Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T22:23:28.959Z",
+      updatedNodeId: "dev",
+      uuid: "5bafa20e4772449cbe66b70613a3bd6b",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6932136422182921,
+        longitude: -1.83482205658789,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:08:49.467Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:08:49.467Z",
+      updatedNodeId: "dev",
+      uuid: "acd76da53d044c1986bb85b7c5db9eb8",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6953300982824305,
+        longitude: -1.8345150531724643,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-14T00:07:09.541Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-14T00:07:09.541Z",
+      updatedNodeId: "dev",
+      uuid: "50a553f7ce164477b5096e44664610a0",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6945098633471632,
+        longitude: -1.8345161003700152,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-14T00:34:09.735Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-14T00:34:09.735Z",
+      updatedNodeId: "dev",
+      uuid: "88007a57edcf41319d9dd8561b184d62",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6932151082948638,
+        longitude: -1.8349085376523262,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-14T00:34:03.281Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-14T00:34:03.281Z",
+      updatedNodeId: "dev",
+      uuid: "29eec9aa88e44bb2b300ef654a5b9363",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6932151082948638,
+        longitude: -1.8349085376523262,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:12:52.376Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:12:52.376Z",
+      updatedNodeId: "dev",
+      uuid: "dd34be3393354de68eee4f51bda011d5",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6955686847911782,
+        longitude: -1.8345153149718518,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-14T00:36:30.273Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-14T00:36:30.273Z",
+      updatedNodeId: "dev",
+      uuid: "15b57026296a4b9c95accb1e8c805b19",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6932098723071078,
+        longitude: -1.834885237506812,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-14T00:23:02.010Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-14T00:23:02.010Z",
+      updatedNodeId: "dev",
+      uuid: "8fe7db151ce741a989e9d3aa1747ec92",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6936101112111752,
+        longitude: -1.8345106898493342,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T22:31:54.573Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T22:31:54.573Z",
+      updatedNodeId: "dev",
+      uuid: "c879dc124f1d47c18670b62ed1141258",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6933698317330531,
+        longitude: -1.8345153149718518,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:22:59.651Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:22:59.651Z",
+      updatedNodeId: "dev",
+      uuid: "1331d5e1017247339f7ccbd9827204df",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6956233135967655,
+        longitude: -1.833578945828157,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:46:36.067Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:46:36.067Z",
+      updatedNodeId: "dev",
+      uuid: "0b138021cd2a4c709c265bba8eaec339",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6956251287391876,
+        longitude: -1.8341621475977108,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:52:28.575Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:52:28.575Z",
+      updatedNodeId: "dev",
+      uuid: "86e55b8402874a30ac6f426340c3653c",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.695455587455649,
+        longitude: -1.8345187183638934,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-14T00:07:04.683Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-14T00:07:04.683Z",
+      updatedNodeId: "dev",
+      uuid: "1313a69bf3d749908c6ee987b23b1a06",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6945098633471632,
+        longitude: -1.8345161003700152,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:20:17.795Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:20:17.795Z",
+      updatedNodeId: "dev",
+      uuid: "8859b35f9e60413386e7d756aadd80f1",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.695626280656494,
+        longitude: -1.8337469337686616,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:17:36.242Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:17:36.242Z",
+      updatedNodeId: "dev",
+      uuid: "09b862a60b0b4329b3e70fc0d54206c2",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6956251287391876,
+        longitude: -1.8339402115300274,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:02:25.056Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:02:25.056Z",
+      updatedNodeId: "dev",
+      uuid: "35261d3965cc46dbb1f46d26e94f473e",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6946765073841437,
+        longitude: -1.8343480251630482,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-14T00:00:45.578Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-14T00:00:45.578Z",
+      updatedNodeId: "dev",
+      uuid: "1cd97abc7f91460da1606562bddabc18",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6946762455847558,
+        longitude: -1.8344204563270061,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:58:44.183Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:58:44.183Z",
+      updatedNodeId: "dev",
+      uuid: "fd5ba4f074ae44adbfcd7040fa22e442",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6948609537794945,
+        longitude: -1.8343861606072045,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T21:39:21.661Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T21:39:21.661Z",
+      updatedNodeId: "dev",
+      uuid: "48342d0143d7492db59054dfda2d5d97",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6932386702397657,
+        longitude: -1.8348515526522486,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:04:26.174Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:04:26.174Z",
+      updatedNodeId: "dev",
+      uuid: "c271cf24b89b4038892277774d1b0cc3",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6948853883890224,
+        longitude: -1.8343852006761159,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T20:46:38.131Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T20:46:38.131Z",
+      updatedNodeId: "dev",
+      uuid: "3ef95e3c4b964fb4bef3010f81c5c67e",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.695614936016356,
+        longitude: -1.8344989961433458,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T20:37:10.961Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T20:37:10.961Z",
+      updatedNodeId: "dev",
+      uuid: "a91379a8cd3343a2b3f1d75852999f26",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6956364559260331,
+        longitude: -1.8335347017316188,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:09:29.694Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:09:29.694Z",
+      updatedNodeId: "dev",
+      uuid: "b1005745d53949538f9862b457f179b6",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.695367413421838,
+        longitude: -1.8345155767712398,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T21:18:01.300Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T21:18:01.300Z",
+      updatedNodeId: "dev",
+      uuid: "8f8d71ccd75548a08a10507804147d48",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6939780964306657,
+        longitude: -1.8345108643822594,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:46:15.616Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:46:15.616Z",
+      updatedNodeId: "dev",
+      uuid: "9cb7f326207d409b931638e390fa95df",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6956251287391876,
+        longitude: -1.8341592503511526,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T20:34:34.765Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T20:34:34.765Z",
+      updatedNodeId: "dev",
+      uuid: "575960fb699c4f57829888ca343c4268",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6956364559260331,
+        longitude: -1.8335347017316188,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T22:58:42.721Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T22:58:42.721Z",
+      updatedNodeId: "dev",
+      uuid: "5a8b2eb450a148558c300b62f9e2a060",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6946529454392418,
+        longitude: -1.834540360446618,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T22:26:10.755Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T22:26:10.755Z",
+      updatedNodeId: "dev",
+      uuid: "6f9ff1c5dec441e5a2feb5e587e821f7",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6933268093669914,
+        longitude: -1.834885935638513,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-14T00:07:30.382Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-14T00:07:30.382Z",
+      updatedNodeId: "dev",
+      uuid: "f7d1158b326b44cd9cd7b4a2d1eddd21",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6945098633471632,
+        longitude: -1.8345161003700152,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T21:36:14.197Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T21:36:14.197Z",
+      updatedNodeId: "dev",
+      uuid: "bbae21c63c934cc0953772f4e12aedad",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6932386702397657,
+        longitude: -1.8348515526522486,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T22:32:44.773Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T22:32:44.773Z",
+      updatedNodeId: "dev",
+      uuid: "e2791a4f2909458ab0fea416f063ead7",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6933698317330531,
+        longitude: -1.8345153149718518,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T20:17:56.346Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T20:17:56.346Z",
+      updatedNodeId: "dev",
+      uuid: "b6c56ab7eab545799adf44518f010044",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6956236626626159,
+        longitude: -1.8335812147561847,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:55:42.121Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:55:42.121Z",
+      updatedNodeId: "dev",
+      uuid: "c547c82194f4409582bd332124dfcaa9",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6950480530753083,
+        longitude: -1.8345097299182458,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:28:32.282Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:28:32.282Z",
+      updatedNodeId: "dev",
+      uuid: "5bfa3ad5b1684f7da50692cb017fc946",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6956364559260331,
+        longitude: -1.8335347017316188,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T21:03:50.303Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T21:03:50.303Z",
+      updatedNodeId: "dev",
+      uuid: "35a01ac76c604b199ff6a8a4136e88ef",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: { latitude: 0.694508676523272, longitude: -1.83452465248335 },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:39:30.786Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:39:30.786Z",
+      updatedNodeId: "dev",
+      uuid: "377102d3f70a47d3b89e65563ab932dd",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6956336110393524,
+        longitude: -1.8335333054682172,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-14T00:04:31.980Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-14T00:04:31.980Z",
+      updatedNodeId: "dev",
+      uuid: "918aa6e884354e22b571deb242e84183",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6945054825707409,
+        longitude: -1.8345059774603538,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T20:38:52.028Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T20:38:52.028Z",
+      updatedNodeId: "dev",
+      uuid: "cbf1b57dc184417a9a116a7ffdc27bd6",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6956257570577183,
+        longitude: -1.8335451737071309,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T20:57:49.582Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T20:57:49.582Z",
+      updatedNodeId: "dev",
+      uuid: "9d21b342b5214891bce601e5e4b011ce",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.694714346122327,
+        longitude: -1.8343456864218508,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T20:47:58.799Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T20:47:58.799Z",
+      updatedNodeId: "dev",
+      uuid: "07074246bb144419adff2aefe32c8acd",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6955756661081861,
+        longitude: -1.8345170603011038,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T20:41:17.184Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T20:41:17.184Z",
+      updatedNodeId: "dev",
+      uuid: "fb3883ec614542dbba3e4fb687511164",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6956283226917188,
+        longitude: -1.8339407525820954,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T20:43:55.853Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T20:43:55.853Z",
+      updatedNodeId: "dev",
+      uuid: "278c998eb87842ba8d66536277965c5a",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6956280259857459,
+        longitude: -1.834038752819595,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:27:42.679Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:27:42.679Z",
+      updatedNodeId: "dev",
+      uuid: "3c3d1a3ca7a54fc290d5d398f797c01d",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6956364559260331,
+        longitude: -1.8335347017316188,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T21:19:05.088Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T21:19:05.088Z",
+      updatedNodeId: "dev",
+      uuid: "e29de2a88efb4e0f809279a462214c86",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.693855923383026,
+        longitude: -1.8345099917176333,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T22:30:54.232Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T22:30:54.232Z",
+      updatedNodeId: "dev",
+      uuid: "7dd0264ca22944009e164b0f7d608732",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6933919101480909,
+        longitude: -1.8346801613197028,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T21:35:31.496Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T21:35:31.496Z",
+      updatedNodeId: "dev",
+      uuid: "1c587a671c924694a38faf425a7cebef",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6932098723071078,
+        longitude: -1.8348855865726628,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-14T00:09:30.350Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-14T00:09:30.350Z",
+      updatedNodeId: "dev",
+      uuid: "695d445673b443599f76cad56badd9a4",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6944769813440557,
+        longitude: -1.8345251760821257,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-14T00:08:50.448Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-14T00:08:50.448Z",
+      updatedNodeId: "dev",
+      uuid: "5094bab3c4104859a340a20b575f28ee",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6944964941250931,
+        longitude: -1.834547341763626,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:15:04.502Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:15:04.502Z",
+      updatedNodeId: "dev",
+      uuid: "5993d6e9488149dab502a470abe14016",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6956242735278542,
+        longitude: -1.8343466288996466,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T21:10:55.507Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T21:10:55.507Z",
+      updatedNodeId: "dev",
+      uuid: "82fe941a6caa4807976faa401d7df8f0",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6943751762887869,
+        longitude: -1.834511457794205,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:25:01.161Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:25:01.161Z",
+      updatedNodeId: "dev",
+      uuid: "094aa30b2c024be680689c7084e4a4a6",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.695625407991868,
+        longitude: -1.8335495370302608,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T22:40:02.496Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T22:40:02.496Z",
+      updatedNodeId: "dev",
+      uuid: "1583b8a531e84e80968f934396c84eb6",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6938451721548337,
+        longitude: -1.8345068501249797,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-14T00:13:34.926Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-14T00:13:34.926Z",
+      updatedNodeId: "dev",
+      uuid: "c09efdf44e904ad2a5866b6650a80704",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6943813373010463,
+        longitude: -1.8345112134481099,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T22:28:52.810Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T22:28:52.810Z",
+      updatedNodeId: "dev",
+      uuid: "7967391cb33a4671a3e3cd1502e255ad",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6933268093669914,
+        longitude: -1.834885935638513,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T21:19:41.197Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T21:19:41.197Z",
+      updatedNodeId: "dev",
+      uuid: "12def8486fd241c5b336bec93b6adaba",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6938541955070665,
+        longitude: -1.8345099917176333,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T19:55:59.399Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T19:55:59.399Z",
+      updatedNodeId: "dev",
+      uuid: "b0e04295e7504d74b4886a4d30355aff",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6946733308849051,
+        longitude: -1.8344675802168098,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "978960a3d62348949be56a39e4424e43",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T21:10:09.686Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T21:10:09.686Z",
+      updatedNodeId: "dev",
+      uuid: "6d4617a65eb44ae68ecebe490b090111",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6944097861678539,
+        longitude: -1.8345112134481099,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:06:27.976Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:06:27.976Z",
+      updatedNodeId: "dev",
+      uuid: "098474fdbae440b696044594d68a29e6",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6951424753878411,
+        longitude: -1.8345099917176333,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T19:57:20.593Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T19:57:20.593Z",
+      updatedNodeId: "dev",
+      uuid: "7785e134ddc7435b922fa91d3ef91c52",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.694675076214157,
+        longitude: -1.834411991480134,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "b7b821adf34540ea9dcfa043793f00a2",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T20:45:16.869Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T20:45:16.869Z",
+      updatedNodeId: "dev",
+      uuid: "608ca14e2ed84845b64550c417a109aa",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.695624535327242,
+        longitude: -1.8341703506451954,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T21:38:36.429Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T21:38:36.429Z",
+      updatedNodeId: "dev",
+      uuid: "6d256e1a5b4f4d5ba6a255d871772635",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6932386702397657,
+        longitude: -1.8348515526522486,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-14T00:24:43.303Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-14T00:24:43.303Z",
+      updatedNodeId: "dev",
+      uuid: "f9f5caee3ed0452f997d4a6900a67d25",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6934059251419843,
+        longitude: -1.8345117370468853,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:00:44.163Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:00:44.163Z",
+      updatedNodeId: "dev",
+      uuid: "67b0dcde3dcb4175b68cc0bfd5a61331",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6946742035495311,
+        longitude: -1.8344227252550338,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:19:27.164Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:19:27.164Z",
+      updatedNodeId: "dev",
+      uuid: "44f7159f9cf544398fabb209edd7ecec",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6956251287391876,
+        longitude: -1.833938483654068,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T22:27:51.052Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T22:27:51.052Z",
+      updatedNodeId: "dev",
+      uuid: "5c95a731523642cf9f8f43db0db62347",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6933268093669914,
+        longitude: -1.834885935638513,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-14T00:20:19.428Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-14T00:20:19.428Z",
+      updatedNodeId: "dev",
+      uuid: "abd49e056fee430e8b54fd3d7bba9a3f",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6937802982665372,
+        longitude: -1.834510340783484,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:37:58.497Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:37:58.497Z",
+      updatedNodeId: "dev",
+      uuid: "ea8e184d56f149c798835c16b9430f1f",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6956364559260331,
+        longitude: -1.8335347017316188,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T20:19:17.159Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T20:19:17.159Z",
+      updatedNodeId: "dev",
+      uuid: "5c7f2ca0757344c08872c9d8444a3b96",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6956364559260331,
+        longitude: -1.8335347017316188,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:40:31.657Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:40:31.657Z",
+      updatedNodeId: "dev",
+      uuid: "cd280882cd0d48fb9a7ba5d16bf6da32",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.695625407991868,
+        longitude: -1.8335441265095798,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:50:05.625Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:50:05.625Z",
+      updatedNodeId: "dev",
+      uuid: "91f20884669344949ae80dd4d535e7a8",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6955431157176365,
+        longitude: -1.8345185438309681,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T20:49:30.257Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T20:49:30.257Z",
+      updatedNodeId: "dev",
+      uuid: "d56b9ab8f6294e7d92e9667af861ceb6",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6954776658706866,
+        longitude: -1.8345187183638934,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T23:03:05.541Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T23:03:05.541Z",
+      updatedNodeId: "dev",
+      uuid: "fed3b73c68fc4ae5a1d498e8259fb400",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6948304105175845,
+        longitude: -1.8343448835703946,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T20:48:19.064Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T20:48:19.064Z",
+      updatedNodeId: "dev",
+      uuid: "164c7b8426f24529b8e7c140cbd1a25b",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6955756661081861,
+        longitude: -1.8345170603011038,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T20:46:08.400Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T20:46:08.400Z",
+      updatedNodeId: "dev",
+      uuid: "090e4bebf6154ae4969015703f027f6a",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.695624535327242,
+        longitude: -1.8341703506451954,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-13T21:30:29.870Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-13T21:30:29.870Z",
+      updatedNodeId: "dev",
+      uuid: "5bd6c22286cc452ea89d3d9106bedd07",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6934044765187052,
+        longitude: -1.834816384267821,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+  {
+    crucibleHeader: {
+      createdBy: "service-account-crucible-jupyterlab",
+      createdDate: "2024-05-14T00:22:21.527Z",
+      createdNodeId: "dev",
+      edhControlSet: [],
+      updatedBy: "service-account-crucible-jupyterlab",
+      updatedDate: "2024-05-14T00:22:21.527Z",
+      updatedNodeId: "dev",
+      uuid: "5941d109f0c64d15a57ceff420422b53",
+      version: 1,
+    },
+    estimatedKinematics: {
+      position: {
+        latitude: 0.6936124499523728,
+        longitude: -1.8345106898493342,
+      },
+    },
+    identity: { callsign: "18295505CEB40ABBE063DD4D1FACAA19" },
+    objectId: {
+      descriptiveLabel: "100",
+      uuid: "7efc3fc50ee24760901e332460846d4c",
+    },
+    source: { datasetName: "DenverRTD" },
+  },
+];
