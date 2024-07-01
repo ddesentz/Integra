@@ -8,10 +8,22 @@ import {
 import { GlobalStyles } from "tss-react";
 import { useStyles } from "tss-react/mui";
 import { Integra } from "./client/pages/Integra/Integra";
+import { loader } from "@monaco-editor/react";
+import { integraTheme } from "./client/common/Theme";
 
 const AuthLayout = () => {
   const outlet = useOutlet();
   const { theme } = useStyles();
+  loader.init().then((monaco) => {
+    monaco.editor.defineTheme("integraObject", {
+      base: "vs-dark",
+      inherit: true,
+      rules: [],
+      colors: {
+        "editor.background": integraTheme.palette.background.default,
+      },
+    });
+  });
 
   return (
     <>

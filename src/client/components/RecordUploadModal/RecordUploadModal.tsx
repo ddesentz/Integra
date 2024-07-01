@@ -9,10 +9,7 @@ import { StandardButton } from "../_common/StandardButton/StandardButton";
 import { StandardOptionButton } from "../_common/StandardOptionButton/StandardOptionButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileImport, faUpload } from "@fortawesome/free-solid-svg-icons";
-import {
-  updateObjectHistory,
-  uploadObjects,
-} from "../../common/Helper/HelperFunctions";
+import { uploadObjects } from "../../common/Helper/HelperFunctions";
 import { useAppSignals } from "../../common/AppContext";
 
 interface IRecordUploadModal {

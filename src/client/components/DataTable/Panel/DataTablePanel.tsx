@@ -1,15 +1,10 @@
 import * as React from "react";
 import { dataTablePanelStyles } from "./DataTablePanelStyles";
-import {
-  CircularProgress,
-  Grid,
-  Modal,
-  Skeleton,
-  Typography,
-} from "@mui/material";
+import { CircularProgress, Grid, Typography } from "@mui/material";
 import {
   faDatabase,
   faFile,
+  faFilePen,
   faFolder,
   faPlus,
 } from "@fortawesome/free-solid-svg-icons";
@@ -19,21 +14,17 @@ import { getFunctions, httpsCallable } from "firebase/functions";
 import { app, db } from "../../../..";
 import { useAppSignals } from "../../../common/AppContext";
 import { collection, doc, onSnapshot, query } from "firebase/firestore";
-import JsonView from "react18-json-view";
 import "react18-json-view/src/style.css";
 import {
   convertObjectsToFeatureCollection,
   sortObject,
   updateObjectHistory,
-  uploadObjects,
 } from "../../../common/Helper/HelperFunctions";
-import {
-  LIVE_POV_Object_Events,
-  LIVE_POV_Object_Single_Track,
-} from "../../../common/Helper/HelperData";
 import { AutoSizer, List } from "react-virtualized";
-import { StandardAutocomplete } from "../../_common/StandardAutocomplete/StandardAutocomplete";
 import { RecordUploadModal } from "../../RecordUploadModal/RecordUploadModal";
+import { Editor } from "@monaco-editor/react";
+import { integraTheme } from "../../../common/Theme";
+import { StandardButton } from "../../_common/StandardButton/StandardButton";
 
 interface IDataTablePanel {
   dataPathIndex: number;
@@ -60,6 +51,8 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
   const [loadingList, setLoadingList] = React.useState<boolean>(false);
   const [loadingCollection, setLoadingCollection] =
     React.useState<boolean>(false);
+  const [editing, setEditing] = React.useState<boolean>(false);
+  const [editValue, setEditValue] = React.useState<string>("");
   const listRef = React.createRef<List>();
   const scrollContainerRef = React.createRef<any>();
 
@@ -160,21 +153,34 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
 
   const handleOpenUploadModal = () => {
     setOpenUploadModal(true);
-    // const sortedData = LIVE_POV_Object_Single_Track.sort((a: any, b: any) => {
-    //   return a.crucibleHeader.updatedDate < b.crucibleHeader.updatedDate
-    //     ? -1
-    //     : 1;
-    // });
-    // uploadObjects(sortedData, "Live_POV_Objects2");
   };
 
-  const handleCloseUploadModal = () => {
-    setOpenUploadModal(false);
+  const handleEditChange = (value: string) => {
+    if (editing) {
+      setEditValue(value);
+    }
   };
 
-  const handleDocChange = (newDoc: any) => {
+  const validateObject = () => {
+    let jsonObj;
+    if (editValue === "") return true;
+    try {
+      jsonObj = JSON.parse(editValue);
+    } catch (error) {
+      return true;
+    }
+    if (Array.isArray(jsonObj)) {
+      return true;
+    }
+    return false;
+  };
+
+  const handleDocChange = () => {
+    const newObject = JSON.parse(editValue);
+    setEditing(false);
+    setEditValue("");
     updateObjectHistory(
-      newDoc.src,
+      newObject,
       rootSignals.datasetPath.value[0],
       rootSignals.datasetPath.value[1]
     );
@@ -225,12 +231,44 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
             </div>
           ) : (
             <div className={classes.contentScrollContainer}>
-              <JsonView
-                src={sortObject(recordJSON, true)}
-                editable={rootSignals.datasetPath.value.length === 2}
-                onChange={handleDocChange}
-                className={classes.jsonViewerContainer}
+              <Editor
+                theme="integraObject"
+                height={
+                  editing ? `calc(100% - ${integraTheme.spacing(16)})` : "100%"
+                }
+                language="json"
+                value={JSON.stringify(recordJSON, null, 2)}
+                onChange={handleEditChange}
+                options={{
+                  readOnly: !editing,
+                  minimap: { enabled: false },
+                  scrollBeyondLastLine: false,
+                }}
               />
+              {editing && (
+                <Grid
+                  container
+                  direction="row"
+                  alignItems="center"
+                  justifyContent="space-between"
+                  className={classes.editActionContainer}
+                >
+                  <div className={classes.buttonWrapper}>
+                    <StandardButton
+                      text="Cancel"
+                      onClick={() => setEditing(false)}
+                    />
+                  </div>
+                  <div className={classes.buttonWrapper}>
+                    <StandardButton
+                      text="Update"
+                      type="action"
+                      disabled={validateObject()}
+                      onClick={handleDocChange}
+                    />
+                  </div>
+                </Grid>
+              )}
             </div>
           )}
         </>
@@ -302,6 +340,13 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
             icon={faPlus}
             className={classes.actionIcon}
             onClick={handleOpenUploadModal}
+          />
+        )}
+        {dataPathIndex === 2 && (
+          <FontAwesomeIcon
+            icon={faFilePen}
+            className={classes.actionIcon}
+            onClick={() => setEditing(true)}
           />
         )}
       </Grid>

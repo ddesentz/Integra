@@ -83,17 +83,6 @@ export const dataTablePanelStyles = makeStyles()((theme: Theme) => ({
     borderBottom: `1px solid ${theme.palette.info.main}AA`,
     paddingBottom: theme.spacing(10),
   },
-  jsonViewerContainer: {
-    paddingLeft: theme.spacing(9),
-    paddingRight: theme.spacing(2),
-    paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2),
-    width: `calc(100% - ${theme.spacing(11)})`,
-    "& > .json-view": {
-      display: "flex",
-      flexWrap: "nowrap",
-    },
-  },
   loadingContainer: {
     width: "100%",
     flex: 1,
@@ -115,9 +104,14 @@ export const dataTablePanelStyles = makeStyles()((theme: Theme) => ({
       },
     },
   },
-  uploadModalWrapper: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+  editActionContainer: {
+    borderTop: `1px solid ${theme.palette.info.main}`,
+    padding: theme.spacing(2),
+    height: theme.spacing(16),
+    boxSizing: "border-box",
+  },
+  buttonWrapper: {
+    width: theme.spacing(40),
+    maxWidth: "40%",
   },
 }));
