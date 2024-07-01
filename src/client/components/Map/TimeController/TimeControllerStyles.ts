@@ -16,7 +16,13 @@ export const timeControllerStyles = makeStyles()((theme: Theme) => ({
     display: "flex",
     flexShrink: 1,
     fontSize: theme.spacing(4),
-    color: theme.palette.primary.contrastText,
+    color: theme.palette.info.light,
+  },
+  activeTimestampText: {
+    display: "flex",
+    flexShrink: 1,
+    fontSize: theme.spacing(4),
+    color: theme.palette.primary.light,
   },
   timeActionButton: {
     "&:hover": {
@@ -44,6 +50,14 @@ export const timeControllerStyles = makeStyles()((theme: Theme) => ({
     },
     "& .MuiSlider-mark": {
       backgroundColor: theme.palette.primary.contrastText,
+    },
+  },
+  formatedTimeContainer: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    "& > p": {
+      textAlign: "center",
     },
   },
 }));

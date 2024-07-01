@@ -32,6 +32,13 @@ const TimeControllerComponent: React.FunctionComponent<
   const intervalRef = React.useRef<any>(null);
 
   React.useEffect(() => {
+    if (rootSignals.datasetPath.value.length === 3) {
+      setIsPlaying(false);
+      intervalRef.current && clearInterval(intervalRef.current);
+    }
+  }, [rootSignals.datasetPath.value]);
+
+  React.useEffect(() => {
     if (rootSignals.datasetPath.value.length === 4 && marks.length > 0) {
       const index = marks.findIndex(
         (mark) => mark.label === rootSignals.datasetPath.value[3]
@@ -122,12 +129,36 @@ const TimeControllerComponent: React.FunctionComponent<
         alignItems="center"
         justifyContent="space-between"
       >
-        <Typography className={classes.rangeTimestampText}>
-          {marks[0] ? marks[0].label : ""}
-        </Typography>
-        <Typography className={classes.rangeTimestampText}>
-          {marks[marks.length - 1] ? marks[marks.length - 1].label : ""}
-        </Typography>
+        <Grid item className={classes.formatedTimeContainer}>
+          <Typography className={classes.rangeTimestampText}>
+            {marks[0] ? marks[0].label.split("T")[0] : ""}
+          </Typography>
+          <Typography className={classes.rangeTimestampText}>
+            {marks[0] ? marks[0].label.split("T")[1] : ""}
+          </Typography>
+        </Grid>
+        {rootSignals.datasetPath.value.length === 4 && (
+          <Grid item className={classes.formatedTimeContainer}>
+            <Typography className={classes.activeTimestampText}>
+              {rootSignals.datasetPath.value[3].split("T")[0]}
+            </Typography>
+            <Typography className={classes.activeTimestampText}>
+              {rootSignals.datasetPath.value[3].split("T")[1]}
+            </Typography>
+          </Grid>
+        )}
+        <Grid item className={classes.formatedTimeContainer}>
+          <Typography className={classes.rangeTimestampText}>
+            {marks[marks.length - 1]
+              ? marks[marks.length - 1].label.split("T")[0]
+              : ""}
+          </Typography>
+          <Typography className={classes.rangeTimestampText}>
+            {marks[marks.length - 1]
+              ? marks[marks.length - 1].label.split("T")[1]
+              : ""}
+          </Typography>
+        </Grid>
       </Grid>
 
       <Slider
