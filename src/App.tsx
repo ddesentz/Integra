@@ -23,6 +23,14 @@ const AuthLayout = () => {
         "editor.background": integraTheme.palette.background.default,
       },
     });
+    monaco.editor.defineTheme("uploadEditor", {
+      base: "vs-dark",
+      inherit: true,
+      rules: [],
+      colors: {
+        "editor.background": integraTheme.palette.info.dark,
+      },
+    });
   });
 
   return (

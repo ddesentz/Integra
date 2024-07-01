@@ -145,7 +145,15 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
           (item) => item === rootSignals.activeObject.value.id
         );
         if (activeIndex !== -1) {
-          listRef.current?.scrollToPosition(activeIndex * 40);
+          const visualItems = Math.floor(
+            listRef.current?.Grid.props.height / 40
+          );
+          listRef.current?.scrollToPosition(
+            Math.min(
+              (listRef.current.Grid.props.rowCount - visualItems) * 40,
+              activeIndex * 40
+            )
+          );
         }
       }
     }
@@ -237,7 +245,7 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
                   editing ? `calc(100% - ${integraTheme.spacing(16)})` : "100%"
                 }
                 language="json"
-                value={JSON.stringify(recordJSON, null, 2)}
+                value={JSON.stringify(sortObject(recordJSON), null, 2)}
                 onChange={handleEditChange}
                 options={{
                   readOnly: !editing,

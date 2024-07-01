@@ -30,7 +30,7 @@ const RecordUploadModalComponent: React.FunctionComponent<
   const [editorLanguage, setEditorLanguage] = React.useState<string>("json");
   const fileSelectorRef = React.useRef<HTMLInputElement | null>(null);
   const [editorValue, setEditorValue] = React.useState<string>(
-    "[\n\t{\n\n\t}\n]".replace("\n", "\r\n")
+    "[\n\t{}\n]".replace("\n", "\r\n")
   );
 
   React.useEffect(() => {
@@ -82,6 +82,7 @@ const RecordUploadModalComponent: React.FunctionComponent<
 
   const validateUpload = () => {
     let jsonObj;
+    if (editorValue === "[\n\t{}\n]".replace("\n", "\r\n")) return true;
     try {
       jsonObj = JSON.parse(editorValue);
     } catch (error) {
@@ -189,10 +190,9 @@ const RecordUploadModalComponent: React.FunctionComponent<
           </Grid>
           <div className={classes.editorWrapper}>
             <Editor
-              theme="vs-dark"
+              theme="uploadEditor"
               height={"40vh"}
               language={editorLanguage}
-              defaultValue={"{\n\n}".replace("\n", "\r\n")}
               value={editorValue}
               onChange={(value) => setEditorValue(value)}
               options={{
