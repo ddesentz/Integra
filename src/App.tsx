@@ -7,12 +7,10 @@ import {
 } from "react-router-dom";
 import { GlobalStyles } from "tss-react";
 import { useStyles } from "tss-react/mui";
-import { getAuth } from "firebase/auth";
 import { Integra } from "./client/pages/Integra/Integra";
 
 const AuthLayout = () => {
   const outlet = useOutlet();
-  const currentUser = getAuth();
   const { theme } = useStyles();
 
   return (

@@ -189,7 +189,7 @@ const IntegraMapComponent: React.FunctionComponent<IIntegraMap> = () => {
           type="geojson"
           data={rootSignals.mapData.value}
           cluster={true}
-          clusterMaxZoom={20}
+          clusterMaxZoom={15}
           clusterRadius={10}
         >
           <Layer {...clusterLayer} />

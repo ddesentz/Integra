@@ -62,7 +62,7 @@ export const uploadObjects = async (data: any[], datasetName: string) => {
       ),
       object
     );
-    await delay(50);
+    await delay(5);
   });
 };
 

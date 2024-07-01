@@ -115,4 +115,9 @@ export const dataTablePanelStyles = makeStyles()((theme: Theme) => ({
       },
     },
   },
+  uploadModalWrapper: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
 }));

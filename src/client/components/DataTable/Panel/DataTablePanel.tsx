@@ -1,6 +1,12 @@
 import * as React from "react";
 import { dataTablePanelStyles } from "./DataTablePanelStyles";
-import { CircularProgress, Grid, Skeleton, Typography } from "@mui/material";
+import {
+  CircularProgress,
+  Grid,
+  Modal,
+  Skeleton,
+  Typography,
+} from "@mui/material";
 import {
   faDatabase,
   faFile,
@@ -26,6 +32,8 @@ import {
   LIVE_POV_Object_Single_Track,
 } from "../../../common/Helper/HelperData";
 import { AutoSizer, List } from "react-virtualized";
+import { StandardAutocomplete } from "../../_common/StandardAutocomplete/StandardAutocomplete";
+import { RecordUploadModal } from "../../RecordUploadModal/RecordUploadModal";
 
 interface IDataTablePanel {
   dataPathIndex: number;
@@ -43,6 +51,7 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
   const { rootSignals } = useAppSignals();
   const splitPath = path.split("/");
   const displayPath = splitPath[splitPath.length - 1];
+  const [openUploadModal, setOpenUploadModal] = React.useState<boolean>(false);
   const [items, setItems] = React.useState<string[]>([]);
   const [recordJSON, setRecordJSON] = React.useState<any>(null);
   const [recordCollections, setRecordCollections] = React.useState<string[]>(
@@ -149,13 +158,18 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
     }
   }, [rootSignals.activeObject.value]);
 
-  const handleUploadData = () => {
-    const sortedData = LIVE_POV_Object_Single_Track.sort((a: any, b: any) => {
-      return a.crucibleHeader.updatedDate < b.crucibleHeader.updatedDate
-        ? -1
-        : 1;
-    });
-    uploadObjects(sortedData, "Live_POV_Objects2");
+  const handleOpenUploadModal = () => {
+    setOpenUploadModal(true);
+    // const sortedData = LIVE_POV_Object_Single_Track.sort((a: any, b: any) => {
+    //   return a.crucibleHeader.updatedDate < b.crucibleHeader.updatedDate
+    //     ? -1
+    //     : 1;
+    // });
+    // uploadObjects(sortedData, "Live_POV_Objects2");
+  };
+
+  const handleCloseUploadModal = () => {
+    setOpenUploadModal(false);
   };
 
   const handleDocChange = (newDoc: any) => {
@@ -283,13 +297,20 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
             {type === "collection" ? ` (${items.length})` : ""}
           </Typography>
         </Grid>
-        <FontAwesomeIcon
-          icon={faPlus}
-          className={classes.actionIcon}
-          onClick={handleUploadData}
-        />
+        {dataPathIndex < 2 && (
+          <FontAwesomeIcon
+            icon={faPlus}
+            className={classes.actionIcon}
+            onClick={handleOpenUploadModal}
+          />
+        )}
       </Grid>
       {renderContent()}
+      <RecordUploadModal
+        open={openUploadModal}
+        setOpen={setOpenUploadModal}
+        datasetPath={dataPathIndex === 0 ? "" : path}
+      />
     </Grid>
   );
 };

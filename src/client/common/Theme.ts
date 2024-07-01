@@ -15,10 +15,13 @@ export const integraTheme = createTheme({
       dark: "#ffab00",
       contrastText: "#000000",
     },
+    success: {
+      main: "#28A745",
+    },
     info: {
       light: "#cfd0d2",
       main: "#30353C",
-      dark: "#2b2c2e",
+      dark: "#1e1e1e",
       contrastText: "#191919",
     },
     error: {
