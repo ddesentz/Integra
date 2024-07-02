@@ -82,24 +82,26 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
           );
           setLoadingList(false);
           if (rootSignals.datasetPath.value.length <= 2) {
-            rootSignals.mapData.value = convertObjectsToFeatureCollection(
-              snapshot.docs.map((doc) => {
-                return { id: doc.id, ...doc.data() };
-              }),
-              false
-            );
+            rootSignals.datasetsMapData.value =
+              convertObjectsToFeatureCollection(
+                snapshot.docs.map((doc) => {
+                  return { id: doc.id, ...doc.data() };
+                }),
+                false
+              );
           }
           if (rootSignals.datasetPath.value.length > 2 && dataPathIndex > 2) {
-            rootSignals.mapData.value = convertObjectsToFeatureCollection(
-              snapshot.docs.map((doc) => {
-                return {
-                  id: doc.data().identity.callsign,
-                  timestamp: doc.id,
-                  ...doc.data(),
-                };
-              }),
-              true
-            );
+            rootSignals.datasetsMapData.value =
+              convertObjectsToFeatureCollection(
+                snapshot.docs.map((doc) => {
+                  return {
+                    id: doc.data().identity.callsign,
+                    timestamp: doc.id,
+                    ...doc.data(),
+                  };
+                }),
+                true
+              );
           }
         });
       }

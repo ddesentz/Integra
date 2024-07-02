@@ -50,8 +50,8 @@ const TimeControllerComponent: React.FunctionComponent<
   }, [rootSignals.activeObject.value, marks]);
 
   React.useEffect(() => {
-    if (rootSignals.mapData.value.isHistory) {
-      const points = rootSignals.mapData.value.features;
+    if (rootSignals.datasetsMapData.value.isHistory) {
+      const points = rootSignals.datasetsMapData.value.features;
       const sortedTimeStamps = points
         .map((point) => point.properties.timestamp)
         .sort();
@@ -67,7 +67,7 @@ const TimeControllerComponent: React.FunctionComponent<
         setEndRange(sortedTimeStamps[sortedTimeStamps.length - 1]);
       }
     }
-  }, [rootSignals.mapData.value]);
+  }, [rootSignals.datasetsMapData.value]);
 
   const handlePlayPause = () => {
     if (!isPlaying) {

@@ -29,16 +29,16 @@ const IntegraMapComponent: React.FunctionComponent<IIntegraMap> = () => {
   const FIT_DELAY = 1000;
 
   React.useEffect(() => {
-    if (rootSignals.mapData.value) {
+    if (rootSignals.datasetsMapData.value) {
       handleFitToObject();
     }
-  }, [rootSignals.activeObject.value, rootSignals.mapData.value]);
+  }, [rootSignals.activeObject.value, rootSignals.datasetsMapData.value]);
 
   React.useEffect(() => {
-    if (rootSignals.mapData.value) {
+    if (rootSignals.datasetsMapData.value) {
       handleFitToDataset();
     }
-  }, [rootSignals.datasetPath.value, rootSignals.mapData.value]);
+  }, [rootSignals.datasetPath.value, rootSignals.datasetsMapData.value]);
 
   const handleFocusObject = (
     lon: number,
@@ -105,16 +105,16 @@ const IntegraMapComponent: React.FunctionComponent<IIntegraMap> = () => {
 
   const handleFitToDataset = () => {
     if (
-      rootSignals.mapData.value &&
+      rootSignals.datasetsMapData.value &&
       rootSignals.datasetPath.value.length % 2 === 1 &&
       mapRef.current
     ) {
       rootSignals.activeObject.value = null;
-      if (rootSignals.mapData.value.features.length > 1) {
-        handleFitBounds(rootSignals.mapData.value.features);
+      if (rootSignals.datasetsMapData.value.features.length > 1) {
+        handleFitBounds(rootSignals.datasetsMapData.value.features);
       } else {
         const position =
-          rootSignals.mapData.value.features[0].geometry.coordinates;
+          rootSignals.datasetsMapData.value.features[0].geometry.coordinates;
         handleFocusObject(position[0], position[1]);
       }
     }
@@ -187,7 +187,7 @@ const IntegraMapComponent: React.FunctionComponent<IIntegraMap> = () => {
         <Source
           id="datasetsMap"
           type="geojson"
-          data={rootSignals.mapData.value}
+          data={rootSignals.datasetsMapData.value}
           cluster={true}
           clusterMaxZoom={15}
           clusterRadius={10}
@@ -206,7 +206,7 @@ const IntegraMapComponent: React.FunctionComponent<IIntegraMap> = () => {
         <Source
           id="activePoints"
           type="geojson"
-          data={rootSignals.mapData.value}
+          data={rootSignals.datasetsMapData.value}
         >
           {rootSignals.datasetPath.value.length < 4 ? (
             <Layer

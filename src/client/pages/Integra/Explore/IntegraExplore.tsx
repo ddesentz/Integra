@@ -17,6 +17,11 @@ import {
 import { useAppSignals } from "../../../common/AppContext";
 import algoliasearch from "algoliasearch";
 import { ObjectGrid } from "../../../components/ObjectGrid/ObjectGrid";
+import { ObjectHitMap } from "../../../components/ObjectGrid/ObjectHitMap/ObjectHitMap";
+import {
+  convertObjectsToFeatureCollection,
+  getObjectDataFromHit,
+} from "../../../common/Helper/HelperFunctions";
 
 interface IIntegraExplore {}
 
@@ -41,6 +46,16 @@ const IntegraExploreComponent: React.FunctionComponent<
   const fetchObjectHits = async (value: string) => {
     exploreIndex.search(value).then(({ hits }) => {
       setSearchResults(hits);
+      const hitData = hits.map((hit) => getObjectDataFromHit(hit));
+      rootSignals.exploreMapData.value = convertObjectsToFeatureCollection(
+        hitData.map((hit: any) => {
+          return {
+            id: hit.identity.callsign,
+            ...hit,
+          };
+        }),
+        false
+      );
     });
   };
 
@@ -135,6 +150,17 @@ const IntegraExploreComponent: React.FunctionComponent<
           >
             <ObjectGrid items={searchResults} />
           </Grid>
+          {rootSignals.viewMapExplore.value && (
+            <Grid
+              container
+              direction="column"
+              alignItems="center"
+              justifyContent="center"
+              className={classes.resultsContainer}
+            >
+              <ObjectHitMap />
+            </Grid>
+          )}
         </Grid>
       </Grid>
     </>

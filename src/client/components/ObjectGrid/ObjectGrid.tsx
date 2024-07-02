@@ -6,6 +6,7 @@ import { Grid, Typography } from "@mui/material";
 import { ObjectHit } from "./ObjectHit/ObjectHit";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileCircleXmark } from "@fortawesome/free-solid-svg-icons";
+import { useAppSignals } from "../../common/AppContext";
 
 const ITEM_MIN_WIDTH = 400;
 const ITEM_HEIGHT = 400;
@@ -17,18 +18,40 @@ const ObjectGridComponent: React.FunctionComponent<IObjectGrid> = ({
   items,
 }) => {
   const { classes } = objectGridStyles();
+  const { rootSignals } = useAppSignals();
   const gridRef = React.useRef<any>(null);
   const containerRef = React.useRef<any>(null);
-  const containerWidth = containerRef?.current?.clientWidth;
+  const [containerWidth, setContainerWidth] = React.useState<number>(
+    containerRef?.current?.clientWidth
+  );
   const windowSize = useWindowSize();
   const virtualGrid = document.getElementById("virtualGrid");
   if (virtualGrid) {
     virtualGrid.style.overflowX = "hidden";
   }
+  const [scrollToRow, setScrollToRow] = React.useState<number>(0);
+  const [scrollToColumn, setScrollToColumn] = React.useState<number>(0);
 
   React.useEffect(() => {
+    setContainerWidth(containerRef?.current?.clientWidth);
     gridRef.current?.recomputeGridSize();
-  }, [windowSize]);
+    scrollToFocusObject();
+  }, [
+    windowSize,
+    rootSignals.viewMapExplore.value,
+    rootSignals.exploreScrollObject.value,
+  ]);
+
+  const scrollToFocusObject = () => {
+    if (rootSignals.exploreScrollObject.value) {
+      const itemIndex = items.findIndex(
+        (item) =>
+          item.identity.callsign === rootSignals.exploreScrollObject.value.id
+      );
+      scrollGridIndex(itemIndex);
+      rootSignals.exploreScrollObject.value = null;
+    }
+  };
 
   const calculateColumnCount = (width: number) => {
     return Math.floor(width / ITEM_MIN_WIDTH);
@@ -42,17 +65,22 @@ const ObjectGridComponent: React.FunctionComponent<IObjectGrid> = ({
     return rowIndex * columnCount + (columnIndex + 1);
   };
 
+  const scrollGridIndex = (itemIndex: number) => {
+    setScrollToRow(Math.floor(itemIndex / columnCount));
+    setScrollToColumn(itemIndex % columnCount);
+  };
+
   const columnCount = React.useMemo(
     () => calculateColumnCount(containerWidth),
-    [containerWidth]
+    [containerWidth, gridRef.current]
   );
   const rowCount = React.useMemo(
     () => Math.ceil(items.length / columnCount),
-    [items.length, columnCount]
+    [items.length, columnCount, gridRef.current]
   );
   const itemWidth = React.useMemo(
     () => calculateItemWidth(containerWidth, columnCount),
-    [containerWidth, columnCount]
+    [containerWidth, columnCount, gridRef.current]
   );
 
   const renderObjectItem = (itemIndex: number) => {
@@ -63,7 +91,14 @@ const ObjectGridComponent: React.FunctionComponent<IObjectGrid> = ({
           direction="column"
           alignItems="center"
           justifyContent="center"
-          className={classes.objectItemContent}
+          className={
+            rootSignals.exploreFocusObject.value &&
+            items[itemIndex] &&
+            items[itemIndex].identity?.callsign ===
+              rootSignals.exploreFocusObject.value.id
+              ? classes.focusItemContent
+              : classes.objectItemContent
+          }
         >
           <ObjectHit hit={items[itemIndex]} />
         </Grid>
@@ -87,6 +122,9 @@ const ObjectGridComponent: React.FunctionComponent<IObjectGrid> = ({
                 rowCount={rowCount}
                 rowHeight={ITEM_HEIGHT}
                 overscanRowCount={3}
+                scrollToAlignment="start"
+                scrollToColumn={scrollToColumn}
+                scrollToRow={scrollToRow}
                 cellRenderer={({ columnIndex, key, rowIndex, style }) => {
                   const itemIndex = getItemIndex(rowIndex, columnIndex);
                   if (itemIndex <= items.length) {

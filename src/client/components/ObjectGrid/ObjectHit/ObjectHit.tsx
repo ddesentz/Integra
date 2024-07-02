@@ -38,6 +38,15 @@ const ObjectHitComponent: React.FunctionComponent<IObjectHit> = ({ hit }) => {
     rootSignals.datasetPath.value = [hit["_datasetId"], callsign];
   };
 
+  const handleDetailObject = () => {
+    setViewDetails((prev) => {
+      if (!viewDetails) {
+        rootSignals.exploreFocusObject.value = { id: callsign, data: hit };
+      }
+      return !viewDetails;
+    });
+  };
+
   const parseHits = (flatHits: object) => {
     let hits: IHit[] = [];
     for (const key in flatHits) {
@@ -55,10 +64,8 @@ const ObjectHitComponent: React.FunctionComponent<IObjectHit> = ({ hit }) => {
     return hits;
   };
 
-  const renderHighlightedHit = (hit: any, index: number, viewAll: boolean) => {
+  const renderHighlightedHit = (hit: any, index: number) => {
     const splitLabel = hit.label.split(".");
-
-    console.log(viewAll);
     return (
       <Grid
         key={index}
@@ -138,7 +145,12 @@ const ObjectHitComponent: React.FunctionComponent<IObjectHit> = ({ hit }) => {
         direction="row"
         alignItems="center"
         justifyContent="space-between"
-        className={classes.objectHeaderContainer}
+        className={
+          rootSignals.exploreFocusObject.value &&
+          rootSignals.exploreFocusObject.value.id === callsign
+            ? classes.focusHeaderContainer
+            : classes.objectHeaderContainer
+        }
       >
         <Typography className={classes.callsignText}>{callsign}</Typography>
       </Grid>
@@ -170,7 +182,7 @@ const ObjectHitComponent: React.FunctionComponent<IObjectHit> = ({ hit }) => {
             {displayHits.length > 0 ? (
               <>
                 {displayHits.map((hit, index) => {
-                  return renderHighlightedHit(hit, index, viewDetails);
+                  return renderHighlightedHit(hit, index);
                 })}
               </>
             ) : (
@@ -197,7 +209,7 @@ const ObjectHitComponent: React.FunctionComponent<IObjectHit> = ({ hit }) => {
           <StandardButton
             text={viewDetails ? "Hits" : "Details"}
             type="action"
-            onClick={() => setViewDetails(!viewDetails)}
+            onClick={handleDetailObject}
           />
         </div>
       </Grid>

@@ -20,6 +20,14 @@ export const objectGridStyles = makeStyles()((theme: Theme) => ({
     boxSizing: "border-box",
     display: "block",
   },
+  focusItemContent: {
+    height: "100%",
+    width: "100%",
+    border: `1px solid ${theme.palette.primary.contrastText}`,
+    borderRadius: theme.spacing(3),
+    boxSizing: "border-box",
+    display: "block",
+  },
   emptyContainer: {
     width: "100%",
     height: "100%",

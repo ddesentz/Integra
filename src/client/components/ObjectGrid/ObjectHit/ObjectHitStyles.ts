@@ -13,6 +13,17 @@ export const objectHitStyles = makeStyles()((theme: Theme) => ({
     borderTopLeftRadius: theme.spacing(3),
     borderTopRightRadius: theme.spacing(3),
   },
+  focusHeaderContainer: {
+    height: theme.spacing(16),
+    padding: theme.spacing(2),
+    backgroundColor: theme.palette.secondary.main,
+    borderTopLeftRadius: theme.spacing(3),
+    borderTopRightRadius: theme.spacing(3),
+    "& > p": {
+      color: theme.palette.secondary.contrastText,
+      fontWeight: "bold",
+    },
+  },
   callsignText: {
     fontSize: theme.spacing(4),
     fontWeight: "bold",
@@ -95,6 +106,8 @@ export const objectHitStyles = makeStyles()((theme: Theme) => ({
     textOverflow: "ellipsis",
     whiteSpace: "nowrap",
     cursor: "pointer",
+    maxWidth: `calc(100% - ${theme.spacing(40)})`,
+    textAlign: "start",
     "&:hover": {
       color: theme.palette.primary.light,
     },
