@@ -20,4 +20,20 @@ export const objectGridStyles = makeStyles()((theme: Theme) => ({
     boxSizing: "border-box",
     display: "block",
   },
+  emptyContainer: {
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  emptyIcon: {
+    height: theme.spacing(30),
+    color: theme.palette.info.light + "66",
+  },
+  emptyText: {
+    paddingTop: theme.spacing(6),
+    fontSize: theme.spacing(8),
+    color: theme.palette.info.light + "AA",
+  },
 }));

@@ -2,18 +2,19 @@ import * as React from "react";
 import { objectGridStyles } from "./ObjectGridStyles";
 import { AutoSizer, Grid as VirtualizedGrid } from "react-virtualized";
 import { useWindowSize } from "../../hooks/useWindowSize";
-import { Grid } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
+import { ObjectHit } from "./ObjectHit/ObjectHit";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFileCircleXmark } from "@fortawesome/free-solid-svg-icons";
 
 const ITEM_MIN_WIDTH = 400;
 const ITEM_HEIGHT = 400;
 
 interface IObjectGrid {
   items: any[];
-  itemRenderer: (item: any) => JSX.Element;
 }
 const ObjectGridComponent: React.FunctionComponent<IObjectGrid> = ({
   items,
-  itemRenderer,
 }) => {
   const { classes } = objectGridStyles();
   const gridRef = React.useRef<any>(null);
@@ -64,7 +65,7 @@ const ObjectGridComponent: React.FunctionComponent<IObjectGrid> = ({
           justifyContent="center"
           className={classes.objectItemContent}
         >
-          {itemRenderer(items[itemIndex])}
+          <ObjectHit hit={items[itemIndex]} />
         </Grid>
       </div>
     );
@@ -72,7 +73,7 @@ const ObjectGridComponent: React.FunctionComponent<IObjectGrid> = ({
 
   return (
     <div ref={containerRef} className={classes.objectGridContainer}>
-      {containerWidth && columnCount && (
+      {containerWidth && columnCount && items.length > 0 ? (
         <AutoSizer>
           {({ height }) => {
             return (
@@ -97,10 +98,27 @@ const ObjectGridComponent: React.FunctionComponent<IObjectGrid> = ({
                   }
                   return null;
                 }}
+                style={{ overflowX: "hidden" }}
               />
             );
           }}
         </AutoSizer>
+      ) : (
+        <Grid
+          container
+          direction="column"
+          alignItems="center"
+          justifyContent="center"
+          className={classes.emptyContainer}
+        >
+          <FontAwesomeIcon
+            icon={faFileCircleXmark}
+            className={classes.emptyIcon}
+          />
+          <Typography className={classes.emptyText}>
+            No Objects Found
+          </Typography>
+        </Grid>
       )}
     </div>
   );

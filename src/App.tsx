@@ -43,7 +43,7 @@ const AuthLayout = () => {
             height: "1em",
           },
           "*::-webkit-scrollbar-track": {
-            backgroundColor: theme.palette.background.default,
+            backgroundColor: "transparent",
             borderRadius: theme.spacing(2),
           },
           "*::-webkit-scrollbar-thumb": {
@@ -52,7 +52,7 @@ const AuthLayout = () => {
             border: `0.3em solid ${theme.palette.background.default}`,
           },
           "*::-webkit-scrollbar-corner": {
-            backgroundColor: theme.palette.background.default,
+            backgroundColor: "transparent",
           },
           ".ReactVirtualized__Grid__innerScrollContainer": {
             display: "flex",

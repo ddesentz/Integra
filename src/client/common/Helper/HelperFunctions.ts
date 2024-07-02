@@ -4,6 +4,15 @@ import { features } from "process";
 
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
+export const getObjectDataFromHit = (hit: any) => {
+  return Object.keys(hit)
+    .filter((key) => key[0] !== "_")
+    .reduce((obj, key) => {
+      obj[key] = hit[key];
+      return obj;
+    }, {});
+};
+
 export const flatten = (obj, roots = [], sep = ".") =>
   Object
     // find props of given object
