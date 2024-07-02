@@ -2,10 +2,17 @@ import { signal } from "@preact/signals-react";
 
 const createRootSignals = () => {
   const datasetPath = signal<string[]>([]);
-  const viewMap = signal<boolean>(false);
+  const viewMapExplore = signal<boolean>(false);
+  const viewMapDatasets = signal<boolean>(true);
   const mapData = signal<any>(null);
   const activeObject = signal<any>(null);
-  return { datasetPath, viewMap, mapData, activeObject };
+  return {
+    datasetPath,
+    viewMapExplore,
+    viewMapDatasets,
+    mapData,
+    activeObject,
+  };
 };
 
 export const rootSignals = {

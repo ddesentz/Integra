@@ -40,18 +40,26 @@ exports.getDocumentCollections = onCall((data: any) => {
 
 exports.addObjectIndex = functions.firestore
   .document("{datasetId}/{objectId}")
-  .onCreate((snapshot: any) => {
+  .onCreate((snapshot: any, context: any) => {
     const data = snapshot.data();
     const objectID = snapshot.id;
-    return objectIndex.saveObject({ ...data, objectID });
+    return objectIndex.saveObject({
+      ...data,
+      objectID,
+      _datasetId: context.params.datasetId,
+    });
   });
 
 exports.updateObjectIndex = functions.firestore
   .document("{datasetId}/{objectId}")
-  .onUpdate((change: any) => {
+  .onUpdate((change: any, context: any) => {
     const newData = change.after.data();
     const objectID = change.after.id;
-    return objectIndex.saveObject({ ...newData, objectID });
+    return objectIndex.saveObject({
+      ...newData,
+      objectID,
+      _datasetId: context.params.datasetId,
+    });
   });
 
 exports.deleteObjectIndex = functions.firestore

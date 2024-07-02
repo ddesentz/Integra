@@ -19,7 +19,7 @@ const DataTableComponent: React.FunctionComponent<IDataTable> = () => {
   }, [rootSignals.datasetPath.value]);
 
   const getTransformStyle = () => {
-    if (rootSignals.viewMap.value) {
+    if (rootSignals.viewMapDatasets.value) {
       if (collectionPath.length > 1) {
         return `translateX(-${(collectionPath.length - 1) * (100 / 3)}%)`;
       }

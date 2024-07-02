@@ -27,7 +27,7 @@ const IntegraDatasetsComponent: React.FunctionComponent<
     newViewType: string
   ) => {
     if (newViewType === null) return;
-    rootSignals.viewMap.value = newViewType === "map";
+    rootSignals.viewMapDatasets.value = newViewType === "map";
   };
 
   return (
@@ -61,7 +61,7 @@ const IntegraDatasetsComponent: React.FunctionComponent<
             />
           </div>
           <ToggleButtonGroup
-            value={rootSignals.viewMap.value ? "map" : "list"}
+            value={rootSignals.viewMapDatasets.value ? "map" : "list"}
             exclusive
             onChange={handleAlignment}
             aria-label="text alignment"
@@ -90,7 +90,7 @@ const IntegraDatasetsComponent: React.FunctionComponent<
         </Grid>
         <Grid container direction="row" className={classes.viewContainer}>
           <DataTable />
-          {rootSignals.viewMap.value && <IntegraMap />}
+          {rootSignals.viewMapDatasets.value && <IntegraMap />}
         </Grid>
       </Grid>
     </>

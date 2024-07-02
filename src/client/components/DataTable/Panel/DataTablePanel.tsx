@@ -324,7 +324,7 @@ const DataTablePanelComponent: React.FunctionComponent<IDataTablePanel> = ({
       alignItems="flex-start"
       justifyContent="flex-start"
       className={
-        rootSignals.viewMap.value
+        rootSignals.viewMapDatasets.value
           ? classes.mapDataTablePanelContainer
           : classes.dataTablePanelContainer
       }

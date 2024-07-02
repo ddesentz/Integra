@@ -16,7 +16,7 @@ export const integraDatasetsStyles = makeStyles()((theme: Theme) => ({
   },
   searchContainer: {
     flex: 1,
-    maxWidth: theme.spacing(150),
+    marginRight: theme.spacing(4),
   },
   searchIconAdornment: {
     paddingRight: theme.spacing(3),
