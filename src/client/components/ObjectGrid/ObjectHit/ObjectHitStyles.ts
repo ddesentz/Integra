@@ -5,6 +5,7 @@ export const objectHitStyles = makeStyles()((theme: Theme) => ({
   objectHitContainer: {
     height: "100%",
     flexWrap: "nowrap",
+    cursor: "pointer",
   },
   objectHeaderContainer: {
     height: theme.spacing(16),

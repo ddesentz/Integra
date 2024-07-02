@@ -27,15 +27,27 @@ const ObjectHitMapComponent: React.FunctionComponent<IObjectHitMap> = () => {
   const FIT_DELAY = 1000;
 
   React.useEffect(() => {
+    if (rootSignals.exploreMapData.value) {
+      handleFitBounds(
+        rootSignals.exploreMapData.value.features.map((feature) => {
+          return feature;
+        })
+      );
+    }
+  }, [rootSignals.exploreMapData.value]);
+
+  React.useEffect(() => {
     if (rootSignals.exploreFocusObject.value) {
       const focusObject = JSON.parse(
         JSON.stringify(rootSignals.exploreFocusObject.value)
       ).data;
-      const position = [
-        (focusObject.estimatedKinematics.position.longitude * 180) / Math.PI,
-        (focusObject.estimatedKinematics.position.latitude * 180) / Math.PI,
-      ];
-      handleFocusObject(position[0], position[1]);
+      if (focusObject) {
+        const position = [
+          (focusObject.estimatedKinematics.position.longitude * 180) / Math.PI,
+          (focusObject.estimatedKinematics.position.latitude * 180) / Math.PI,
+        ];
+        handleFocusObject(position[0], position[1]);
+      }
     }
   }, [rootSignals.exploreFocusObject.value]);
 
@@ -70,6 +82,7 @@ const ObjectHitMapComponent: React.FunctionComponent<IObjectHitMap> = () => {
     lat: number,
     maxZoom: number = 12
   ) => {
+    if (!mapRef.current) return;
     if (rootSignals.datasetPath.value.length < 3) {
       mapRef.current.fitBounds(
         [

@@ -91,14 +91,7 @@ const ObjectGridComponent: React.FunctionComponent<IObjectGrid> = ({
           direction="column"
           alignItems="center"
           justifyContent="center"
-          className={
-            rootSignals.exploreFocusObject.value &&
-            items[itemIndex] &&
-            items[itemIndex].identity?.callsign ===
-              rootSignals.exploreFocusObject.value.id
-              ? classes.focusItemContent
-              : classes.objectItemContent
-          }
+          className={classes.objectItemContent}
         >
           <ObjectHit hit={items[itemIndex]} />
         </Grid>

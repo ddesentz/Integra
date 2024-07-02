@@ -38,13 +38,12 @@ const ObjectHitComponent: React.FunctionComponent<IObjectHit> = ({ hit }) => {
     rootSignals.datasetPath.value = [hit["_datasetId"], callsign];
   };
 
+  const handleFocusObject = () => {
+    rootSignals.exploreFocusObject.value = { id: callsign, data: hit };
+  };
+
   const handleDetailObject = () => {
-    setViewDetails((prev) => {
-      if (!viewDetails) {
-        rootSignals.exploreFocusObject.value = { id: callsign, data: hit };
-      }
-      return !viewDetails;
-    });
+    setViewDetails(!viewDetails);
   };
 
   const parseHits = (flatHits: object) => {
@@ -138,6 +137,7 @@ const ObjectHitComponent: React.FunctionComponent<IObjectHit> = ({ hit }) => {
       direction="column"
       alignItems="center"
       justifyContent="space-between"
+      onClick={handleFocusObject}
       className={classes.objectHitContainer}
     >
       <Grid
